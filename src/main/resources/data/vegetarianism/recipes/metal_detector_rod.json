@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:fishing_rod"
+    },
+    {
+      "item": "vegetarianism:magnet"
+    }
+  ],
+  "result": {
+    "item": "vegetarianism:metal_detector_rod"
+  }
+}

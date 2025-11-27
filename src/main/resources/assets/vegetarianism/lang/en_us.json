@@ -1,0 +1,12 @@
+{
+  "block.vegetarianism.soy_crop": "Soy Crop",
+  "block.vegetarianism.tofu": "Tofu",
+  "item.vegetarianism.soy_beans": "Soy Beans",
+  "item.vegetarianism.soy_pod": "Soy Pod",
+  "item.vegetarianism.tofu_slice": "Tofu Slice",
+  "item.vegetarianism.metal_detector_rod": "Metal Detector Rod",
+  "item.vegetarianism.magnet": "Magnet",
+  "block.vegetarianism.crate": "Crate",
+
+  "itemGroup.vegetarianism.vegetarianism_group": "Vegetarianism"
+}

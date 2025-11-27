@@ -1,0 +1,6 @@
+{
+  "parent": "item/fishing_rod",
+  "textures": {
+    "layer0": "vegetarianism:item/metal_detector_rod_cast"
+  }
+}

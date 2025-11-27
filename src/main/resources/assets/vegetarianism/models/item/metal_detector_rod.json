@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld_rod",
+  "textures": {
+    "layer0": "vegetarianism:item/metal_detector_rod"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "vegetarianism:cast": 1
+      },
+      "model": "vegetarianism:item/metal_detector_rod_cast"
+    }
+  ]
+}

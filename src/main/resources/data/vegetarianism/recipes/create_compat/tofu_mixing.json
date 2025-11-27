@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "vegetarianism:soy_beans"
+    },
+    {
+      "fluid": "minecraft:water",
+      "nbt": {},
+      "amount": 20250
+    }
+  ],
+  "results": [
+    {
+      "item": "vegetarianism:tofu",
+      "count": 2
+    }
+  ],
+  "heatRequirement": "heated"
+}

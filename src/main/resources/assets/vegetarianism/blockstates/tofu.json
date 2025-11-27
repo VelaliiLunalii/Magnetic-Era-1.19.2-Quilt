@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "vegetarianism:block/tofu"
+    },
+    "bites=1": {
+      "model": "vegetarianism:block/tofu_slice"
+    }
+  }
+}
