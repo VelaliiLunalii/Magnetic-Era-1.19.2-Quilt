@@ -1,7 +1,7 @@
 package io.github.velaliilunalii.coins_n_guns.item.custom;
 
 import com.google.common.collect.Lists;
-import io.github.velaliilunalii.coins_n_guns.enchantement.ModEnchantments;
+import io.github.velaliilunalii.coins_n_guns.enchantment.ModEnchantments;
 import io.github.velaliilunalii.coins_n_guns.entity.custom.CopperCoinProjectileEntity;
 import io.github.velaliilunalii.coins_n_guns.entity.custom.GoldCoinProjectileEntity;
 import io.github.velaliilunalii.coins_n_guns.entity.custom.IronCoinProjectileEntity;

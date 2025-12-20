@@ -1,12 +1,12 @@
-package io.github.velaliilunalii.coins_n_guns.enchantement.custom;
+package io.github.velaliilunalii.coins_n_guns.enchantment.custom;
 
-import io.github.velaliilunalii.coins_n_guns.enchantement.ModEnchantments;
+import io.github.velaliilunalii.coins_n_guns.enchantment.ModEnchantments;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
-public class CashDashEnchantment extends Enchantment {
-	public CashDashEnchantment() {
+public class TaxEvasionEnchantment extends Enchantment {
+	public TaxEvasionEnchantment() {
 		super(Rarity.COMMON, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 	}
 
@@ -23,6 +23,6 @@ public class CashDashEnchantment extends Enchantment {
 
 	@Override
 	public boolean canAccept(Enchantment other) {
-		return super.canAccept(other) && other != ModEnchantments.TAX_EVASION;
+		return super.canAccept(other) && other != ModEnchantments.CASH_DASH;
 	}
 }

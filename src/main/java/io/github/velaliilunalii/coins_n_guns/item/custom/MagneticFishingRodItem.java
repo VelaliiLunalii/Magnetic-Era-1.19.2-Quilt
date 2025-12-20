@@ -1,6 +1,6 @@
 package io.github.velaliilunalii.coins_n_guns.item.custom;
 
-import io.github.velaliilunalii.coins_n_guns.enchantement.ModEnchantments;
+import io.github.velaliilunalii.coins_n_guns.enchantment.ModEnchantments;
 import io.github.velaliilunalii.coins_n_guns.entity.ModEntities;
 import io.github.velaliilunalii.coins_n_guns.entity.custom.MagneticFishingRodBobberEntity;
 import io.github.velaliilunalii.coins_n_guns.mixin.FishingBobberEntityAccessorMixin;

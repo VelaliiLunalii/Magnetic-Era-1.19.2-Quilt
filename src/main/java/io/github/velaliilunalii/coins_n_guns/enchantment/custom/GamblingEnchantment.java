@@ -1,12 +1,12 @@
-package io.github.velaliilunalii.coins_n_guns.enchantement.custom;
+package io.github.velaliilunalii.coins_n_guns.enchantment.custom;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
-public class BootyEnchantment extends Enchantment {
-	public BootyEnchantment() {
-		super(Rarity.COMMON, EnchantmentTarget.FISHING_ROD, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
+public class GamblingEnchantment extends Enchantment {
+	public GamblingEnchantment() {
+		super(Rarity.COMMON, EnchantmentTarget.CROSSBOW, new EquipmentSlot[] {EquipmentSlot.MAINHAND});
 	}
 
 	@Override
@@ -18,5 +18,5 @@ public class BootyEnchantment extends Enchantment {
 	public int getMaxPower(int level) {return 50;}
 
 	@Override
-	public int getMaxLevel() {return 1;}
+	public int getMaxLevel() {return 3;}
 }

@@ -1,7 +1,7 @@
 package io.github.velaliilunalii.coins_n_guns;
 
 import io.github.velaliilunalii.coins_n_guns.block.ModBlocks;
-import io.github.velaliilunalii.coins_n_guns.enchantement.ModEnchantments;
+import io.github.velaliilunalii.coins_n_guns.enchantment.ModEnchantments;
 import io.github.velaliilunalii.coins_n_guns.entity.ModEntities;
 import io.github.velaliilunalii.coins_n_guns.event.ModEvents;
 import io.github.velaliilunalii.coins_n_guns.item.ModItems;

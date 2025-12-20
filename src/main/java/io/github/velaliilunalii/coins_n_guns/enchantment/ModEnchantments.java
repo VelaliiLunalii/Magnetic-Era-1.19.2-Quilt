@@ -1,10 +1,10 @@
-package io.github.velaliilunalii.coins_n_guns.enchantement;
+package io.github.velaliilunalii.coins_n_guns.enchantment;
 
 import io.github.velaliilunalii.coins_n_guns.CoinsNGuns;
-import io.github.velaliilunalii.coins_n_guns.enchantement.custom.BootyEnchantment;
-import io.github.velaliilunalii.coins_n_guns.enchantement.custom.CashDashEnchantment;
-import io.github.velaliilunalii.coins_n_guns.enchantement.custom.GamblingEnchantment;
-import io.github.velaliilunalii.coins_n_guns.enchantement.custom.TaxEvasionEnchantment;
+import io.github.velaliilunalii.coins_n_guns.enchantment.custom.BootyEnchantment;
+import io.github.velaliilunalii.coins_n_guns.enchantment.custom.CashDashEnchantment;
+import io.github.velaliilunalii.coins_n_guns.enchantment.custom.GamblingEnchantment;
+import io.github.velaliilunalii.coins_n_guns.enchantment.custom.TaxEvasionEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
