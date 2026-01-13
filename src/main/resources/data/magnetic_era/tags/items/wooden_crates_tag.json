@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "magnetic_era:spruce_crate",
+    "magnetic_era:oak_crate",
+    "magnetic_era:acacia_crate",
+    "magnetic_era:birch_crate",
+    "magnetic_era:crimson_crate",
+    "magnetic_era:dark_oak_crate",
+    "magnetic_era:jungle_crate",
+    "magnetic_era:mangrove_crate",
+    "magnetic_era:warped_crate"
+  ]
+}

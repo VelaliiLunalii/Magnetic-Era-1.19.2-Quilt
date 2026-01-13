@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "magnetic_era:iron_crate"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_ingot"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "magnetic_buzz": {
+    "sounds": ["magnetic_era:magnetic_buzz"],
+    "subtitle": "subtitle.magnetic_era.magnetic_buzz"
+  }
+}

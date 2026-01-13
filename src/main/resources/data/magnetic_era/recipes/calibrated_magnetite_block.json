@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": {
+      "item": "magnetic_era:magnetite"
+    },"A": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "MAM",
+    "MAM"
+  ],
+  "result": {
+    "item": "magnetic_era:calibrated_magnetite_block"
+  }
+}

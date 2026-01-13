@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "coins_n_guns:block/deactivated_inverted_phase_block"
-  }
-}

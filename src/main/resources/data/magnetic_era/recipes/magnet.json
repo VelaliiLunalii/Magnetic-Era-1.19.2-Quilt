@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "M": {
+      "item": "magnetic_era:magnetite"
+    }
+  },
+  "pattern": [
+    " M ",
+    "I M",
+    "II "
+  ],
+  "result": {
+    "item": "magnetic_era:magnet"
+  }
+}

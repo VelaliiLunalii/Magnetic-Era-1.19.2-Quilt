@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "magnetic_era:block/phase_block"
+    },
+    "open=true": {
+      "model": "magnetic_era:block/phase_block_on"
+    }
+  }
+}

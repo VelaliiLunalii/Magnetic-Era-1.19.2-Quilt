@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "magnetic_era:block/copper_wire_block_end",
+    "side": "magnetic_era:block/copper_wire_block"
+  }
+}

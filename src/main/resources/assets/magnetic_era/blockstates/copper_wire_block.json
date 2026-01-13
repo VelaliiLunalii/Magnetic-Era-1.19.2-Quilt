@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "magnetic_era:block/copper_wire_block",
+      "y": 90
+    },
+    "axis=z": {
+      "model": "magnetic_era:block/copper_wire_block"
+    },
+    "axis=y": {
+      "model": "magnetic_era:block/copper_wire_block",
+      "x": 270
+    }
+  }
+}
+

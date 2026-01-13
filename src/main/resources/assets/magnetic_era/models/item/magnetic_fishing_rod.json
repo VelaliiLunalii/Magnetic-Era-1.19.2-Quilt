@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld_rod",
+  "textures": {
+    "layer0": "magnetic_era:item/magnetic_fishing_rod"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "magnetic_era:cast": 1
+      },
+      "model": "magnetic_era:item/magnetic_fishing_rod_cast"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "magnetic_era:magnetic_coil"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CSC",
+    "CCC"
+  ],
+  "result": {
+    "count": 8,
+    "item": "magnetic_era:weak_magnetic_coil"
+  }
+}

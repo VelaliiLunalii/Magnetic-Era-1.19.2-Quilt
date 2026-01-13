@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "B": {
+      "item": "minecraft:copper_block"
+    }
+  },
+  "pattern": [
+    "CBC",
+    "BRB",
+    "CBC"
+  ],
+  "result": {
+    "count": 8,
+    "item": "magnetic_era:magnetic_coil"
+  }
+}

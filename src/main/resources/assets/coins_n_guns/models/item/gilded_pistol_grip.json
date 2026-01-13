@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "coins_n_guns:item/gilded_pistol_grip"
-  }
-}

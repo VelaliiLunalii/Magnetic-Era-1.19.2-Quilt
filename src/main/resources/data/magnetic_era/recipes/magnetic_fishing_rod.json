@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:fishing_rod"
+    },
+    {
+      "item": "magnetic_era:magnet"
+    }
+  ],
+  "result": {
+    "item": "magnetic_era:magnetic_fishing_rod"
+  }
+}

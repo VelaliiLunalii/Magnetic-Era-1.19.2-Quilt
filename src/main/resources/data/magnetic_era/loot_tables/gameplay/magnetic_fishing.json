@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:gameplay",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "item", "name": "coins_n_guns:copper_coin", "weight": 90 },
+        { "type": "item", "name": "coins_n_guns:iron_coin", "weight": 30 },
+        { "type": "item", "name": "coins_n_guns:gold_coin", "weight": 10 },
+        { "type": "item", "name": "magnetic_era:spruce_crate", "weight": 20 },
+        { "type": "item", "name": "magnetic_era:mossy_spruce_crate", "weight": 20 },
+        { "type": "item", "name": "magnetic_era:iron_crate", "weight": 10 },
+        { "type": "item", "name": "coins_n_guns:philosophers_stone", "weight": 1 }
+      ]
+    }
+  ]
+}

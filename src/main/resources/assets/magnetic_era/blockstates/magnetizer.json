@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=east,powered=false": {
+      "model": "magnetic_era:block/magnetizer",
+      "y": 90
+    },
+    "facing=east,powered=true": {
+      "model": "magnetic_era:block/magnetizer_on",
+      "y": 90
+    },
+    "facing=north,powered=false": {
+      "model": "magnetic_era:block/magnetizer"
+    },
+    "facing=north,powered=true": {
+      "model": "magnetic_era:block/magnetizer_on"
+    },
+    "facing=south,powered=false": {
+      "model": "magnetic_era:block/magnetizer",
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "magnetic_era:block/magnetizer_on",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "magnetic_era:block/magnetizer",
+      "y": 270
+    },
+    "facing=west,powered=true": {
+      "model": "magnetic_era:block/magnetizer_on",
+      "y": 270
+    },
+    "facing=down,powered=false": {
+      "model": "magnetic_era:block/magnetizer",
+      "x": 90
+    },
+    "facing=down,powered=true": {
+      "model": "magnetic_era:block/magnetizer_on",
+      "x": 90
+    },
+    "facing=up,powered=false": {
+      "model": "magnetic_era:block/magnetizer",
+      "x": 270
+    },
+    "facing=up,powered=true": {
+      "model": "magnetic_era:block/magnetizer_on",
+      "x": 270
+    }
+  }
+}

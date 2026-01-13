@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "magnetic_era:wooden_crates_tag"
+    }
+  ],
+  "result": {
+    "count": 16,
+    "item": "minecraft:stick"
+  }
+}

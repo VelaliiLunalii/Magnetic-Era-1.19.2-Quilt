@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=east,lit=false": {
+      "model": "magnetic_era:block/resonator",
+      "y": 90
+    },
+    "facing=east,lit=true": {
+      "model": "magnetic_era:block/resonator_on",
+      "y": 90
+    },
+    "facing=north,lit=false": {
+      "model": "magnetic_era:block/resonator"
+    },
+    "facing=north,lit=true": {
+      "model": "magnetic_era:block/resonator_on"
+    },
+    "facing=south,lit=false": {
+      "model": "magnetic_era:block/resonator",
+      "y": 180
+    },
+    "facing=south,lit=true": {
+      "model": "magnetic_era:block/resonator_on",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "magnetic_era:block/resonator",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "magnetic_era:block/resonator_on",
+      "y": 270
+    },
+    "facing=down,lit=false": {
+      "model": "magnetic_era:block/resonator",
+      "x": 90
+    },
+    "facing=down,lit=true": {
+      "model": "magnetic_era:block/resonator_on",
+      "x": 90
+    },
+    "facing=up,lit=false": {
+      "model": "magnetic_era:block/resonator",
+      "x": 270
+    },
+    "facing=up,lit=true": {
+      "model": "magnetic_era:block/resonator_on",
+      "x": 270
+    }
+  }
+}

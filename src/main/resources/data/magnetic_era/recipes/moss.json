@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "magnetic_era:mossy_crates_tag"
+    }
+  ],
+  "result": {
+    "item": "minecraft:moss_block"
+  }
+}
