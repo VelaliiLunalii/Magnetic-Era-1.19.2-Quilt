@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "magnetic_era:block/weak_phase_coil",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "magnetic_era:block/weak_phase_coil"
+    },
+    "facing=south": {
+      "model": "magnetic_era:block/weak_phase_coil",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "magnetic_era:block/weak_phase_coil",
+      "y": 270
+    },
+    "facing=down": {
+      "model": "magnetic_era:block/weak_phase_coil",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "magnetic_era:block/weak_phase_coil",
+      "x": 270
+    }
+  }
+}

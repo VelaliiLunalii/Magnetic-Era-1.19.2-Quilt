@@ -2,11 +2,11 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "magnetic_era:block/resonator_panel_front_on",
-		"4": "magnetic_era:block/resonator_ring",
-		"5": "magnetic_era:block/resonator_panel_back",
-		"7": "magnetic_era:block/resonator_energy_cube",
-		"particle": "magnetic_era:block/resonator_ring"
+		"2": "magnetic_era:block/resonator/resonator_panel_front_on",
+		"4": "magnetic_era:block/resonator/resonator_ring",
+		"5": "magnetic_era:block/resonator/resonator_panel_back",
+		"7": "magnetic_era:block/resonator/resonator_energy_cube",
+		"particle": "magnetic_era:block/resonator/resonator_ring"
 	},
 	"elements": [
 		{

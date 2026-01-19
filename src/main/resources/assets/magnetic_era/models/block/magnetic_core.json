@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"2": "magnetic_era:block/phase_coil",
-		"particle": "magnetic_era:block/phase_coil"
+		"2": "magnetic_era:block/coil/phase_core",
+		"particle": "magnetic_era:block/coil/phase_core"
 	},
 	"elements": [
 		{

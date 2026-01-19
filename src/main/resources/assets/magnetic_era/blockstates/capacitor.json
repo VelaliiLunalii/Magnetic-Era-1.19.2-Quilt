@@ -1,0 +1,1059 @@
+{
+  "variants": {
+    "facing=east,level=0": {
+      "model": "magnetic_era:block/capacitor_0",
+      "y": 90
+    },
+    "facing=east,level=1,charge=0": {
+      "model": "magnetic_era:block/capacitor_1_0",
+      "y": 90
+    },
+    "facing=east,level=1,charge=1": {
+      "model": "magnetic_era:block/capacitor_1_1",
+      "y": 90
+    },
+    "facing=east,level=2,charge=0": {
+      "model": "magnetic_era:block/capacitor_2_0",
+      "y": 90
+    },
+    "facing=east,level=2,charge=1": {
+      "model": "magnetic_era:block/capacitor_2_1",
+      "y": 90
+    },
+    "facing=east,level=2,charge=2": {
+      "model": "magnetic_era:block/capacitor_2_2",
+      "y": 90
+    },
+    "facing=east,level=3,charge=0": {
+      "model": "magnetic_era:block/capacitor_3_0",
+      "y": 90
+    },
+    "facing=east,level=3,charge=1": {
+      "model": "magnetic_era:block/capacitor_3_1",
+      "y": 90
+    },
+    "facing=east,level=3,charge=2": {
+      "model": "magnetic_era:block/capacitor_3_2",
+      "y": 90
+    },
+    "facing=east,level=3,charge=3": {
+      "model": "magnetic_era:block/capacitor_3_3",
+      "y": 90
+    },
+    "facing=east,level=4,charge=0": {
+      "model": "magnetic_era:block/capacitor_4_0",
+      "y": 90
+    },
+    "facing=east,level=4,charge=1": {
+      "model": "magnetic_era:block/capacitor_4_1",
+      "y": 90
+    },
+    "facing=east,level=4,charge=2": {
+      "model": "magnetic_era:block/capacitor_4_2",
+      "y": 90
+    },
+    "facing=east,level=4,charge=3": {
+      "model": "magnetic_era:block/capacitor_4_3",
+      "y": 90
+    },
+    "facing=east,level=4,charge=4": {
+      "model": "magnetic_era:block/capacitor_4_4",
+      "y": 90
+    },
+    "facing=east,level=5,charge=0": {
+      "model": "magnetic_era:block/capacitor_5_0",
+      "y": 90
+    },
+    "facing=east,level=5,charge=1": {
+      "model": "magnetic_era:block/capacitor_5_1",
+      "y": 90
+    },
+    "facing=east,level=5,charge=2": {
+      "model": "magnetic_era:block/capacitor_5_2",
+      "y": 90
+    },
+    "facing=east,level=5,charge=3": {
+      "model": "magnetic_era:block/capacitor_5_3",
+      "y": 90
+    },
+    "facing=east,level=5,charge=4": {
+      "model": "magnetic_era:block/capacitor_5_4",
+      "y": 90
+    },
+    "facing=east,level=5,charge=5": {
+      "model": "magnetic_era:block/capacitor_5_5",
+      "y": 90
+    },
+    "facing=east,level=6,charge=0": {
+      "model": "magnetic_era:block/capacitor_6_0",
+      "y": 90
+    },
+    "facing=east,level=6,charge=1": {
+      "model": "magnetic_era:block/capacitor_6_1",
+      "y": 90
+    },
+    "facing=east,level=6,charge=2": {
+      "model": "magnetic_era:block/capacitor_6_2",
+      "y": 90
+    },
+    "facing=east,level=6,charge=3": {
+      "model": "magnetic_era:block/capacitor_6_3",
+      "y": 90
+    },
+    "facing=east,level=6,charge=4": {
+      "model": "magnetic_era:block/capacitor_6_4",
+      "y": 90
+    },
+    "facing=east,level=6,charge=5": {
+      "model": "magnetic_era:block/capacitor_6_5",
+      "y": 90
+    },
+    "facing=east,level=6,charge=6": {
+      "model": "magnetic_era:block/capacitor_6_6",
+      "y": 90
+    },
+    "facing=east,level=7,charge=0": {
+      "model": "magnetic_era:block/capacitor_7_0",
+      "y": 90
+    },
+    "facing=east,level=7,charge=1": {
+      "model": "magnetic_era:block/capacitor_7_1",
+      "y": 90
+    },
+    "facing=east,level=7,charge=2": {
+      "model": "magnetic_era:block/capacitor_7_2",
+      "y": 90
+    },
+    "facing=east,level=7,charge=3": {
+      "model": "magnetic_era:block/capacitor_7_3",
+      "y": 90
+    },
+    "facing=east,level=7,charge=4": {
+      "model": "magnetic_era:block/capacitor_7_4",
+      "y": 90
+    },
+    "facing=east,level=7,charge=5": {
+      "model": "magnetic_era:block/capacitor_7_5",
+      "y": 90
+    },
+    "facing=east,level=7,charge=6": {
+      "model": "magnetic_era:block/capacitor_7_6",
+      "y": 90
+    },
+    "facing=east,level=7,charge=7": {
+      "model": "magnetic_era:block/capacitor_7_7",
+      "y": 90
+    },
+    "facing=east,level=8,charge=0": {
+      "model": "magnetic_era:block/capacitor_8_0",
+      "y": 90
+    },
+    "facing=east,level=8,charge=1": {
+      "model": "magnetic_era:block/capacitor_8_1",
+      "y": 90
+    },
+    "facing=east,level=8,charge=2": {
+      "model": "magnetic_era:block/capacitor_8_2",
+      "y": 90
+    },
+    "facing=east,level=8,charge=3": {
+      "model": "magnetic_era:block/capacitor_8_3",
+      "y": 90
+    },
+    "facing=east,level=8,charge=4": {
+      "model": "magnetic_era:block/capacitor_8_4",
+      "y": 90
+    },
+    "facing=east,level=8,charge=5": {
+      "model": "magnetic_era:block/capacitor_8_5",
+      "y": 90
+    },
+    "facing=east,level=8,charge=6": {
+      "model": "magnetic_era:block/capacitor_8_6",
+      "y": 90
+    },
+    "facing=east,level=8,charge=7": {
+      "model": "magnetic_era:block/capacitor_8_7",
+      "y": 90
+    },
+    "facing=east,level=8,charge=8": {
+      "model": "magnetic_era:block/capacitor_8_8",
+      "y": 90
+    },
+
+
+
+
+    "facing=north,level=0": {
+      "model": "magnetic_era:block/capacitor_0"
+    },
+    "facing=north,level=1,charge=0": {
+      "model": "magnetic_era:block/capacitor_1_0"
+    },
+    "facing=north,level=1,charge=1": {
+      "model": "magnetic_era:block/capacitor_1_1"
+    },
+    "facing=north,level=2,charge=0": {
+      "model": "magnetic_era:block/capacitor_2_0"
+    },
+    "facing=north,level=2,charge=1": {
+      "model": "magnetic_era:block/capacitor_2_1"
+    },
+    "facing=north,level=2,charge=2": {
+      "model": "magnetic_era:block/capacitor_2_2"
+    },
+    "facing=north,level=3,charge=0": {
+      "model": "magnetic_era:block/capacitor_3_0"
+    },
+    "facing=north,level=3,charge=1": {
+      "model": "magnetic_era:block/capacitor_3_1"
+    },
+    "facing=north,level=3,charge=2": {
+      "model": "magnetic_era:block/capacitor_3_2"
+    },
+    "facing=north,level=3,charge=3": {
+      "model": "magnetic_era:block/capacitor_3_3"
+    },
+    "facing=north,level=4,charge=0": {
+      "model": "magnetic_era:block/capacitor_4_0"
+    },
+    "facing=north,level=4,charge=1": {
+      "model": "magnetic_era:block/capacitor_4_1"
+    },
+    "facing=north,level=4,charge=2": {
+      "model": "magnetic_era:block/capacitor_4_2"
+    },
+    "facing=north,level=4,charge=3": {
+      "model": "magnetic_era:block/capacitor_4_3"
+    },
+    "facing=north,level=4,charge=4": {
+      "model": "magnetic_era:block/capacitor_4_4"
+    },
+    "facing=north,level=5,charge=0": {
+      "model": "magnetic_era:block/capacitor_5_0"
+    },
+    "facing=north,level=5,charge=1": {
+      "model": "magnetic_era:block/capacitor_5_1"
+    },
+    "facing=north,level=5,charge=2": {
+      "model": "magnetic_era:block/capacitor_5_2"
+    },
+    "facing=north,level=5,charge=3": {
+      "model": "magnetic_era:block/capacitor_5_3"
+    },
+    "facing=north,level=5,charge=4": {
+      "model": "magnetic_era:block/capacitor_5_4"
+    },
+    "facing=north,level=5,charge=5": {
+      "model": "magnetic_era:block/capacitor_5_5"
+    },
+    "facing=north,level=6,charge=0": {
+      "model": "magnetic_era:block/capacitor_6_0"
+    },
+    "facing=north,level=6,charge=1": {
+      "model": "magnetic_era:block/capacitor_6_1"
+    },
+    "facing=north,level=6,charge=2": {
+      "model": "magnetic_era:block/capacitor_6_2"
+    },
+    "facing=north,level=6,charge=3": {
+      "model": "magnetic_era:block/capacitor_6_3"
+    },
+    "facing=north,level=6,charge=4": {
+      "model": "magnetic_era:block/capacitor_6_4"
+    },
+    "facing=north,level=6,charge=5": {
+      "model": "magnetic_era:block/capacitor_6_5"
+    },
+    "facing=north,level=6,charge=6": {
+      "model": "magnetic_era:block/capacitor_6_6"
+    },
+    "facing=north,level=7,charge=0": {
+      "model": "magnetic_era:block/capacitor_7_0"
+    },
+    "facing=north,level=7,charge=1": {
+      "model": "magnetic_era:block/capacitor_7_1"
+    },
+    "facing=north,level=7,charge=2": {
+      "model": "magnetic_era:block/capacitor_7_2"
+    },
+    "facing=north,level=7,charge=3": {
+      "model": "magnetic_era:block/capacitor_7_3"
+    },
+    "facing=north,level=7,charge=4": {
+      "model": "magnetic_era:block/capacitor_7_4"
+    },
+    "facing=north,level=7,charge=5": {
+      "model": "magnetic_era:block/capacitor_7_5"
+    },
+    "facing=north,level=7,charge=6": {
+      "model": "magnetic_era:block/capacitor_7_6"
+    },
+    "facing=north,level=7,charge=7": {
+      "model": "magnetic_era:block/capacitor_7_7"
+    },
+    "facing=north,level=8,charge=0": {
+      "model": "magnetic_era:block/capacitor_8_0"
+    },
+    "facing=north,level=8,charge=1": {
+      "model": "magnetic_era:block/capacitor_8_1"
+    },
+    "facing=north,level=8,charge=2": {
+      "model": "magnetic_era:block/capacitor_8_2"
+    },
+    "facing=north,level=8,charge=3": {
+      "model": "magnetic_era:block/capacitor_8_3"
+    },
+    "facing=north,level=8,charge=4": {
+      "model": "magnetic_era:block/capacitor_8_4"
+    },
+    "facing=north,level=8,charge=5": {
+      "model": "magnetic_era:block/capacitor_8_5"
+    },
+    "facing=north,level=8,charge=6": {
+      "model": "magnetic_era:block/capacitor_8_6"
+    },
+    "facing=north,level=8,charge=7": {
+      "model": "magnetic_era:block/capacitor_8_7"
+    },
+    "facing=north,level=8,charge=8": {
+      "model": "magnetic_era:block/capacitor_8_8"
+    },
+
+
+
+
+    "facing=south,level=0": {
+      "model": "magnetic_era:block/capacitor_0",
+      "y": 180
+    },
+    "facing=south,level=1,charge=0": {
+      "model": "magnetic_era:block/capacitor_1_0",
+      "y": 180
+    },
+    "facing=south,level=1,charge=1": {
+      "model": "magnetic_era:block/capacitor_1_1",
+      "y": 180
+    },
+    "facing=south,level=2,charge=0": {
+      "model": "magnetic_era:block/capacitor_2_0",
+      "y": 180
+    },
+    "facing=south,level=2,charge=1": {
+      "model": "magnetic_era:block/capacitor_2_1",
+      "y": 180
+    },
+    "facing=south,level=2,charge=2": {
+      "model": "magnetic_era:block/capacitor_2_2",
+      "y": 180
+    },
+    "facing=south,level=3,charge=0": {
+      "model": "magnetic_era:block/capacitor_3_0",
+      "y": 180
+    },
+    "facing=south,level=3,charge=1": {
+      "model": "magnetic_era:block/capacitor_3_1",
+      "y": 180
+    },
+    "facing=south,level=3,charge=2": {
+      "model": "magnetic_era:block/capacitor_3_2",
+      "y": 180
+    },
+    "facing=south,level=3,charge=3": {
+      "model": "magnetic_era:block/capacitor_3_3",
+      "y": 180
+    },
+    "facing=south,level=4,charge=0": {
+      "model": "magnetic_era:block/capacitor_4_0",
+      "y": 180
+    },
+    "facing=south,level=4,charge=1": {
+      "model": "magnetic_era:block/capacitor_4_1",
+      "y": 180
+    },
+    "facing=south,level=4,charge=2": {
+      "model": "magnetic_era:block/capacitor_4_2",
+      "y": 180
+    },
+    "facing=south,level=4,charge=3": {
+      "model": "magnetic_era:block/capacitor_4_3",
+      "y": 180
+    },
+    "facing=south,level=4,charge=4": {
+      "model": "magnetic_era:block/capacitor_4_4",
+      "y": 180
+    },
+    "facing=south,level=5,charge=0": {
+      "model": "magnetic_era:block/capacitor_5_0",
+      "y": 180
+    },
+    "facing=south,level=5,charge=1": {
+      "model": "magnetic_era:block/capacitor_5_1",
+      "y": 180
+    },
+    "facing=south,level=5,charge=2": {
+      "model": "magnetic_era:block/capacitor_5_2",
+      "y": 180
+    },
+    "facing=south,level=5,charge=3": {
+      "model": "magnetic_era:block/capacitor_5_3",
+      "y": 180
+    },
+    "facing=south,level=5,charge=4": {
+      "model": "magnetic_era:block/capacitor_5_4",
+      "y": 180
+    },
+    "facing=south,level=5,charge=5": {
+      "model": "magnetic_era:block/capacitor_5_5",
+      "y": 180
+    },
+    "facing=south,level=6,charge=0": {
+      "model": "magnetic_era:block/capacitor_6_0",
+      "y": 180
+    },
+    "facing=south,level=6,charge=1": {
+      "model": "magnetic_era:block/capacitor_6_1",
+      "y": 180
+    },
+    "facing=south,level=6,charge=2": {
+      "model": "magnetic_era:block/capacitor_6_2",
+      "y": 180
+    },
+    "facing=south,level=6,charge=3": {
+      "model": "magnetic_era:block/capacitor_6_3",
+      "y": 180
+    },
+    "facing=south,level=6,charge=4": {
+      "model": "magnetic_era:block/capacitor_6_4",
+      "y": 180
+    },
+    "facing=south,level=6,charge=5": {
+      "model": "magnetic_era:block/capacitor_6_5",
+      "y": 180
+    },
+    "facing=south,level=6,charge=6": {
+      "model": "magnetic_era:block/capacitor_6_6",
+      "y": 180
+    },
+    "facing=south,level=7,charge=0": {
+      "model": "magnetic_era:block/capacitor_7_0",
+      "y": 180
+    },
+    "facing=south,level=7,charge=1": {
+      "model": "magnetic_era:block/capacitor_7_1",
+      "y": 180
+    },
+    "facing=south,level=7,charge=2": {
+      "model": "magnetic_era:block/capacitor_7_2",
+      "y": 180
+    },
+    "facing=south,level=7,charge=3": {
+      "model": "magnetic_era:block/capacitor_7_3",
+      "y": 180
+    },
+    "facing=south,level=7,charge=4": {
+      "model": "magnetic_era:block/capacitor_7_4",
+      "y": 180
+    },
+    "facing=south,level=7,charge=5": {
+      "model": "magnetic_era:block/capacitor_7_5",
+      "y": 180
+    },
+    "facing=south,level=7,charge=6": {
+      "model": "magnetic_era:block/capacitor_7_6",
+      "y": 180
+    },
+    "facing=south,level=7,charge=7": {
+      "model": "magnetic_era:block/capacitor_7_7",
+      "y": 180
+    },
+    "facing=south,level=8,charge=0": {
+      "model": "magnetic_era:block/capacitor_8_0",
+      "y": 180
+    },
+    "facing=south,level=8,charge=1": {
+      "model": "magnetic_era:block/capacitor_8_1",
+      "y": 180
+    },
+    "facing=south,level=8,charge=2": {
+      "model": "magnetic_era:block/capacitor_8_2",
+      "y": 180
+    },
+    "facing=south,level=8,charge=3": {
+      "model": "magnetic_era:block/capacitor_8_3",
+      "y": 180
+    },
+    "facing=south,level=8,charge=4": {
+      "model": "magnetic_era:block/capacitor_8_4",
+      "y": 180
+    },
+    "facing=south,level=8,charge=5": {
+      "model": "magnetic_era:block/capacitor_8_5",
+      "y": 180
+    },
+    "facing=south,level=8,charge=6": {
+      "model": "magnetic_era:block/capacitor_8_6",
+      "y": 180
+    },
+    "facing=south,level=8,charge=7": {
+      "model": "magnetic_era:block/capacitor_8_7",
+      "y": 180
+    },
+    "facing=south,level=8,charge=8": {
+      "model": "magnetic_era:block/capacitor_8_8",
+      "y": 180
+    },
+
+
+
+
+    "facing=west,level=0": {
+      "model": "magnetic_era:block/capacitor_0",
+      "y": 270
+    },
+    "facing=west,level=1,charge=0": {
+      "model": "magnetic_era:block/capacitor_1_0",
+      "y": 270
+    },
+    "facing=west,level=1,charge=1": {
+      "model": "magnetic_era:block/capacitor_1_1",
+      "y": 270
+    },
+    "facing=west,level=2,charge=0": {
+      "model": "magnetic_era:block/capacitor_2_0",
+      "y": 270
+    },
+    "facing=west,level=2,charge=1": {
+      "model": "magnetic_era:block/capacitor_2_1",
+      "y": 270
+    },
+    "facing=west,level=2,charge=2": {
+      "model": "magnetic_era:block/capacitor_2_2",
+      "y": 270
+    },
+    "facing=west,level=3,charge=0": {
+      "model": "magnetic_era:block/capacitor_3_0",
+      "y": 270
+    },
+    "facing=west,level=3,charge=1": {
+      "model": "magnetic_era:block/capacitor_3_1",
+      "y": 270
+    },
+    "facing=west,level=3,charge=2": {
+      "model": "magnetic_era:block/capacitor_3_2",
+      "y": 270
+    },
+    "facing=west,level=3,charge=3": {
+      "model": "magnetic_era:block/capacitor_3_3",
+      "y": 270
+    },
+    "facing=west,level=4,charge=0": {
+      "model": "magnetic_era:block/capacitor_4_0",
+      "y": 270
+    },
+    "facing=west,level=4,charge=1": {
+      "model": "magnetic_era:block/capacitor_4_1",
+      "y": 270
+    },
+    "facing=west,level=4,charge=2": {
+      "model": "magnetic_era:block/capacitor_4_2",
+      "y": 270
+    },
+    "facing=west,level=4,charge=3": {
+      "model": "magnetic_era:block/capacitor_4_3",
+      "y": 270
+    },
+    "facing=west,level=4,charge=4": {
+      "model": "magnetic_era:block/capacitor_4_4",
+      "y": 270
+    },
+    "facing=west,level=5,charge=0": {
+      "model": "magnetic_era:block/capacitor_5_0",
+      "y": 270
+    },
+    "facing=west,level=5,charge=1": {
+      "model": "magnetic_era:block/capacitor_5_1",
+      "y": 270
+    },
+    "facing=west,level=5,charge=2": {
+      "model": "magnetic_era:block/capacitor_5_2",
+      "y": 270
+    },
+    "facing=west,level=5,charge=3": {
+      "model": "magnetic_era:block/capacitor_5_3",
+      "y": 270
+    },
+    "facing=west,level=5,charge=4": {
+      "model": "magnetic_era:block/capacitor_5_4",
+      "y": 270
+    },
+    "facing=west,level=5,charge=5": {
+      "model": "magnetic_era:block/capacitor_5_5",
+      "y": 270
+    },
+    "facing=west,level=6,charge=0": {
+      "model": "magnetic_era:block/capacitor_6_0",
+      "y": 270
+    },
+    "facing=west,level=6,charge=1": {
+      "model": "magnetic_era:block/capacitor_6_1",
+      "y": 270
+    },
+    "facing=west,level=6,charge=2": {
+      "model": "magnetic_era:block/capacitor_6_2",
+      "y": 270
+    },
+    "facing=west,level=6,charge=3": {
+      "model": "magnetic_era:block/capacitor_6_3",
+      "y": 270
+    },
+    "facing=west,level=6,charge=4": {
+      "model": "magnetic_era:block/capacitor_6_4",
+      "y": 270
+    },
+    "facing=west,level=6,charge=5": {
+      "model": "magnetic_era:block/capacitor_6_5",
+      "y": 270
+    },
+    "facing=west,level=6,charge=6": {
+      "model": "magnetic_era:block/capacitor_6_6",
+      "y": 270
+    },
+    "facing=west,level=7,charge=0": {
+      "model": "magnetic_era:block/capacitor_7_0",
+      "y": 270
+    },
+    "facing=west,level=7,charge=1": {
+      "model": "magnetic_era:block/capacitor_7_1",
+      "y": 270
+    },
+    "facing=west,level=7,charge=2": {
+      "model": "magnetic_era:block/capacitor_7_2",
+      "y": 270
+    },
+    "facing=west,level=7,charge=3": {
+      "model": "magnetic_era:block/capacitor_7_3",
+      "y": 270
+    },
+    "facing=west,level=7,charge=4": {
+      "model": "magnetic_era:block/capacitor_7_4",
+      "y": 270
+    },
+    "facing=west,level=7,charge=5": {
+      "model": "magnetic_era:block/capacitor_7_5",
+      "y": 270
+    },
+    "facing=west,level=7,charge=6": {
+      "model": "magnetic_era:block/capacitor_7_6",
+      "y": 270
+    },
+    "facing=west,level=7,charge=7": {
+      "model": "magnetic_era:block/capacitor_7_7",
+      "y": 270
+    },
+    "facing=west,level=8,charge=0": {
+      "model": "magnetic_era:block/capacitor_8_0",
+      "y": 270
+    },
+    "facing=west,level=8,charge=1": {
+      "model": "magnetic_era:block/capacitor_8_1",
+      "y": 270
+    },
+    "facing=west,level=8,charge=2": {
+      "model": "magnetic_era:block/capacitor_8_2",
+      "y": 270
+    },
+    "facing=west,level=8,charge=3": {
+      "model": "magnetic_era:block/capacitor_8_3",
+      "y": 270
+    },
+    "facing=west,level=8,charge=4": {
+      "model": "magnetic_era:block/capacitor_8_4",
+      "y": 270
+    },
+    "facing=west,level=8,charge=5": {
+      "model": "magnetic_era:block/capacitor_8_5",
+      "y": 270
+    },
+    "facing=west,level=8,charge=6": {
+      "model": "magnetic_era:block/capacitor_8_6",
+      "y": 270
+    },
+    "facing=west,level=8,charge=7": {
+      "model": "magnetic_era:block/capacitor_8_7",
+      "y": 270
+    },
+    "facing=west,level=8,charge=8": {
+      "model": "magnetic_era:block/capacitor_8_8",
+      "y": 270
+    },
+
+
+
+
+    "facing=down,level=0": {
+      "model": "magnetic_era:block/capacitor_0",
+      "x": 90
+    },
+    "facing=down,level=1,charge=0": {
+      "model": "magnetic_era:block/capacitor_1_0",
+      "x": 90
+    },
+    "facing=down,level=1,charge=1": {
+      "model": "magnetic_era:block/capacitor_1_1",
+      "x": 90
+    },
+    "facing=down,level=2,charge=0": {
+      "model": "magnetic_era:block/capacitor_2_0",
+      "x": 90
+    },
+    "facing=down,level=2,charge=1": {
+      "model": "magnetic_era:block/capacitor_2_1",
+      "x": 90
+    },
+    "facing=down,level=2,charge=2": {
+      "model": "magnetic_era:block/capacitor_2_2",
+      "x": 90
+    },
+    "facing=down,level=3,charge=0": {
+      "model": "magnetic_era:block/capacitor_3_0",
+      "x": 90
+    },
+    "facing=down,level=3,charge=1": {
+      "model": "magnetic_era:block/capacitor_3_1",
+      "x": 90
+    },
+    "facing=down,level=3,charge=2": {
+      "model": "magnetic_era:block/capacitor_3_2",
+      "x": 90
+    },
+    "facing=down,level=3,charge=3": {
+      "model": "magnetic_era:block/capacitor_3_3",
+      "x": 90
+    },
+    "facing=down,level=4,charge=0": {
+      "model": "magnetic_era:block/capacitor_4_0",
+      "x": 90
+    },
+    "facing=down,level=4,charge=1": {
+      "model": "magnetic_era:block/capacitor_4_1",
+      "x": 90
+    },
+    "facing=down,level=4,charge=2": {
+      "model": "magnetic_era:block/capacitor_4_2",
+      "x": 90
+    },
+    "facing=down,level=4,charge=3": {
+      "model": "magnetic_era:block/capacitor_4_3",
+      "x": 90
+    },
+    "facing=down,level=4,charge=4": {
+      "model": "magnetic_era:block/capacitor_4_4",
+      "x": 90
+    },
+    "facing=down,level=5,charge=0": {
+      "model": "magnetic_era:block/capacitor_5_0",
+      "x": 90
+    },
+    "facing=down,level=5,charge=1": {
+      "model": "magnetic_era:block/capacitor_5_1",
+      "x": 90
+    },
+    "facing=down,level=5,charge=2": {
+      "model": "magnetic_era:block/capacitor_5_2",
+      "x": 90
+    },
+    "facing=down,level=5,charge=3": {
+      "model": "magnetic_era:block/capacitor_5_3",
+      "x": 90
+    },
+    "facing=down,level=5,charge=4": {
+      "model": "magnetic_era:block/capacitor_5_4",
+      "x": 90
+    },
+    "facing=down,level=5,charge=5": {
+      "model": "magnetic_era:block/capacitor_5_5",
+      "x": 90
+    },
+    "facing=down,level=6,charge=0": {
+      "model": "magnetic_era:block/capacitor_6_0",
+      "x": 90
+    },
+    "facing=down,level=6,charge=1": {
+      "model": "magnetic_era:block/capacitor_6_1",
+      "x": 90
+    },
+    "facing=down,level=6,charge=2": {
+      "model": "magnetic_era:block/capacitor_6_2",
+      "x": 90
+    },
+    "facing=down,level=6,charge=3": {
+      "model": "magnetic_era:block/capacitor_6_3",
+      "x": 90
+    },
+    "facing=down,level=6,charge=4": {
+      "model": "magnetic_era:block/capacitor_6_4",
+      "x": 90
+    },
+    "facing=down,level=6,charge=5": {
+      "model": "magnetic_era:block/capacitor_6_5",
+      "v": 90
+    },
+    "facing=down,level=6,charge=6": {
+      "model": "magnetic_era:block/capacitor_6_6",
+      "x": 90
+    },
+    "facing=down,level=7,charge=0": {
+      "model": "magnetic_era:block/capacitor_7_0",
+      "x": 90
+    },
+    "facing=down,level=7,charge=1": {
+      "model": "magnetic_era:block/capacitor_7_1",
+      "x": 90
+    },
+    "facing=down,level=7,charge=2": {
+      "model": "magnetic_era:block/capacitor_7_2",
+      "x": 90
+    },
+    "facing=down,level=7,charge=3": {
+      "model": "magnetic_era:block/capacitor_7_3",
+      "x": 90
+    },
+    "facing=down,level=7,charge=4": {
+      "model": "magnetic_era:block/capacitor_7_4",
+      "x": 90
+    },
+    "facing=down,level=7,charge=5": {
+      "model": "magnetic_era:block/capacitor_7_5",
+      "x": 90
+    },
+    "facing=down,level=7,charge=6": {
+      "model": "magnetic_era:block/capacitor_7_6",
+      "x": 90
+    },
+    "facing=down,level=7,charge=7": {
+      "model": "magnetic_era:block/capacitor_7_7",
+      "x": 90
+    },
+    "facing=down,level=8,charge=0": {
+      "model": "magnetic_era:block/capacitor_8_0",
+      "x": 90
+    },
+    "facing=down,level=8,charge=1": {
+      "model": "magnetic_era:block/capacitor_8_1",
+      "x": 90
+    },
+    "facing=down,level=8,charge=2": {
+      "model": "magnetic_era:block/capacitor_8_2",
+      "x": 90
+    },
+    "facing=down,level=8,charge=3": {
+      "model": "magnetic_era:block/capacitor_8_3",
+      "x": 90
+    },
+    "facing=down,level=8,charge=4": {
+      "model": "magnetic_era:block/capacitor_8_4",
+      "x": 90
+    },
+    "facing=down,level=8,charge=5": {
+      "model": "magnetic_era:block/capacitor_8_5",
+      "x": 90
+    },
+    "facing=down,level=8,charge=6": {
+      "model": "magnetic_era:block/capacitor_8_6",
+      "x": 90
+    },
+    "facing=down,level=8,charge=7": {
+      "model": "magnetic_era:block/capacitor_8_7",
+      "x": 90
+    },
+    "facing=down,level=8,charge=8": {
+      "model": "magnetic_era:block/capacitor_8_8",
+      "x": 90
+    },
+
+
+
+
+    "facing=up,level=0": {
+      "model": "magnetic_era:block/capacitor_0",
+      "x": 270
+    },
+    "facing=up,level=1,charge=0": {
+      "model": "magnetic_era:block/capacitor_1_0",
+      "x": 270
+    },
+    "facing=up,level=1,charge=1": {
+      "model": "magnetic_era:block/capacitor_1_1",
+      "x": 270
+    },
+    "facing=up,level=2,charge=0": {
+      "model": "magnetic_era:block/capacitor_2_0",
+      "x": 270
+    },
+    "facing=up,level=2,charge=1": {
+      "model": "magnetic_era:block/capacitor_2_1",
+      "x": 270
+    },
+    "facing=up,level=2,charge=2": {
+      "model": "magnetic_era:block/capacitor_2_2",
+      "x": 270
+    },
+    "facing=up,level=3,charge=0": {
+      "model": "magnetic_era:block/capacitor_3_0",
+      "x": 270
+    },
+    "facing=up,level=3,charge=1": {
+      "model": "magnetic_era:block/capacitor_3_1",
+      "x": 270
+    },
+    "facing=up,level=3,charge=2": {
+      "model": "magnetic_era:block/capacitor_3_2",
+      "x": 270
+    },
+    "facing=up,level=3,charge=3": {
+      "model": "magnetic_era:block/capacitor_3_3",
+      "x": 270
+    },
+    "facing=up,level=4,charge=0": {
+      "model": "magnetic_era:block/capacitor_4_0",
+      "x": 270
+    },
+    "facing=up,level=4,charge=1": {
+      "model": "magnetic_era:block/capacitor_4_1",
+      "x": 270
+    },
+    "facing=up,level=4,charge=2": {
+      "model": "magnetic_era:block/capacitor_4_2",
+      "x": 270
+    },
+    "facing=up,level=4,charge=3": {
+      "model": "magnetic_era:block/capacitor_4_3",
+      "x": 270
+    },
+    "facing=up,level=4,charge=4": {
+      "model": "magnetic_era:block/capacitor_4_4",
+      "x": 270
+    },
+    "facing=up,level=5,charge=0": {
+      "model": "magnetic_era:block/capacitor_5_0",
+      "x": 270
+    },
+    "facing=up,level=5,charge=1": {
+      "model": "magnetic_era:block/capacitor_5_1",
+      "x": 270
+    },
+    "facing=up,level=5,charge=2": {
+      "model": "magnetic_era:block/capacitor_5_2",
+      "x": 270
+    },
+    "facing=up,level=5,charge=3": {
+      "model": "magnetic_era:block/capacitor_5_3",
+      "x": 270
+    },
+    "facing=up,level=5,charge=4": {
+      "model": "magnetic_era:block/capacitor_5_4",
+      "x": 270
+    },
+    "facing=up,level=5,charge=5": {
+      "model": "magnetic_era:block/capacitor_5_5",
+      "x": 270
+    },
+    "facing=up,level=6,charge=0": {
+      "model": "magnetic_era:block/capacitor_6_0",
+      "x": 270
+    },
+    "facing=up,level=6,charge=1": {
+      "model": "magnetic_era:block/capacitor_6_1",
+      "x": 270
+    },
+    "facing=up,level=6,charge=2": {
+      "model": "magnetic_era:block/capacitor_6_2",
+      "x": 270
+    },
+    "facing=up,level=6,charge=3": {
+      "model": "magnetic_era:block/capacitor_6_3",
+      "x": 270
+    },
+    "facing=up,level=6,charge=4": {
+      "model": "magnetic_era:block/capacitor_6_4",
+      "x": 270
+    },
+    "facing=up,level=6,charge=5": {
+      "model": "magnetic_era:block/capacitor_6_5",
+      "v": 270
+    },
+    "facing=up,level=6,charge=6": {
+      "model": "magnetic_era:block/capacitor_6_6",
+      "x": 270
+    },
+    "facing=up,level=7,charge=0": {
+      "model": "magnetic_era:block/capacitor_7_0",
+      "x": 270
+    },
+    "facing=up,level=7,charge=1": {
+      "model": "magnetic_era:block/capacitor_7_1",
+      "x": 270
+    },
+    "facing=up,level=7,charge=2": {
+      "model": "magnetic_era:block/capacitor_7_2",
+      "x": 270
+    },
+    "facing=up,level=7,charge=3": {
+      "model": "magnetic_era:block/capacitor_7_3",
+      "x": 270
+    },
+    "facing=up,level=7,charge=4": {
+      "model": "magnetic_era:block/capacitor_7_4",
+      "x": 270
+    },
+    "facing=up,level=7,charge=5": {
+      "model": "magnetic_era:block/capacitor_7_5",
+      "x": 270
+    },
+    "facing=up,level=7,charge=6": {
+      "model": "magnetic_era:block/capacitor_7_6",
+      "x": 270
+    },
+    "facing=up,level=7,charge=7": {
+      "model": "magnetic_era:block/capacitor_7_7",
+      "x": 270
+    },
+    "facing=up,level=8,charge=0": {
+      "model": "magnetic_era:block/capacitor_8_0",
+      "x": 270
+    },
+    "facing=up,level=8,charge=1": {
+      "model": "magnetic_era:block/capacitor_8_1",
+      "x": 270
+    },
+    "facing=up,level=8,charge=2": {
+      "model": "magnetic_era:block/capacitor_8_2",
+      "x": 270
+    },
+    "facing=up,level=8,charge=3": {
+      "model": "magnetic_era:block/capacitor_8_3",
+      "x": 270
+    },
+    "facing=up,level=8,charge=4": {
+      "model": "magnetic_era:block/capacitor_8_4",
+      "x": 270
+    },
+    "facing=up,level=8,charge=5": {
+      "model": "magnetic_era:block/capacitor_8_5",
+      "x": 270
+    },
+    "facing=up,level=8,charge=6": {
+      "model": "magnetic_era:block/capacitor_8_6",
+      "x": 270
+    },
+    "facing=up,level=8,charge=7": {
+      "model": "magnetic_era:block/capacitor_8_7",
+      "x": 270
+    },
+    "facing=up,level=8,charge=8": {
+      "model": "magnetic_era:block/capacitor_8_8",
+      "x": 270
+    }
+  }
+}

@@ -114,8 +114,8 @@ public class CopperCapacitorBlockEntity extends BlockEntity implements BlockEnti
 				Block coil = world.getBlockState(runningPos).getBlock();
 				while (coil instanceof CoilBlock){
 					newEdgeCount++;
-					if (coil.equals(ModBlocks.WEAK_MAGNETIC_COIL)) weakCoilList.add(coil);
-					if (coil.equals(ModBlocks.STRONG_MAGNETIC_COIL)) strongCoilList.add(coil);
+					if (coil.equals(ModBlocks.WEAK_COPPER_COIL)) weakCoilList.add(coil);
+					if (coil.equals(ModBlocks.STRONG_COPPER_COIL)) strongCoilList.add(coil);
 					runningPos = runningPos.offset(runningOffset);
 					coil = world.getBlockState(runningPos).getBlock();
 				}
@@ -182,8 +182,8 @@ public class CopperCapacitorBlockEntity extends BlockEntity implements BlockEnti
 				Block coil = world.getBlockState(runningPos).getBlock();
 				while (coil instanceof CoilBlock){
 					newEdgeCount++;
-					if (coil.equals(ModBlocks.WEAK_MAGNETIC_COIL)) weakCoilList.add(coil);
-					if (coil.equals(ModBlocks.STRONG_MAGNETIC_COIL)) strongCoilList.add(coil);
+					if (coil.equals(ModBlocks.WEAK_COPPER_COIL)) weakCoilList.add(coil);
+					if (coil.equals(ModBlocks.STRONG_COPPER_COIL)) strongCoilList.add(coil);
 					runningPos = runningPos.offset(runningOffset);
 					coil = world.getBlockState(runningPos).getBlock();
 				}
@@ -276,7 +276,7 @@ public class CopperCapacitorBlockEntity extends BlockEntity implements BlockEnti
 		for (Direction direction : Direction.values()){
 			if (direction != originalDirection && direction != originalDirection.getOpposite()){
 				Block block = world.getBlockState(pos.offset(direction)).getBlock();
-				if(block == ModBlocks.MAGNETIC_COIL || block == ModBlocks.WEAK_MAGNETIC_COIL || block == ModBlocks.STRONG_MAGNETIC_COIL) return direction;
+				if(block == ModBlocks.COPPER_COIL || block == ModBlocks.WEAK_COPPER_COIL || block == ModBlocks.STRONG_COPPER_COIL) return direction;
 			}
 		}
 		return null;

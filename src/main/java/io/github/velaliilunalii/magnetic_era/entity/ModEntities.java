@@ -10,17 +10,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModEntities {
-	public static final EntityType<MagneticFishingRodBobberEntity> MAGNETIC_FISHING_ROD_BOBBER =
-		Registry.register(
-			Registry.ENTITY_TYPE,
-			new Identifier(MagneticEra.MOD_ID, "magnetic_fishing_rod_bobber"),
-			FabricEntityTypeBuilder.<MagneticFishingRodBobberEntity>create(
-					SpawnGroup.MISC, MagneticFishingRodBobberEntity::new)
-				.dimensions(EntityDimensions.fixed(0.25F, 0.25F))
-				.trackRangeChunks(4).trackedUpdateRate(10)
-				.build()
-		);
-
 	public static final EntityType<BlockMagneticFieldEntity> BLOCK_MAGNETIC_FIELD =
 		Registry.register(
 			Registry.ENTITY_TYPE,

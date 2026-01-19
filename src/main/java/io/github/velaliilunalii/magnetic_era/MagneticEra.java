@@ -2,7 +2,6 @@ package io.github.velaliilunalii.magnetic_era;
 
 import io.github.velaliilunalii.magnetic_era.block.ModBlockEntities;
 import io.github.velaliilunalii.magnetic_era.block.ModBlocks;
-import io.github.velaliilunalii.magnetic_era.enchantment.ModEnchantments;
 import io.github.velaliilunalii.magnetic_era.entity.ModEntities;
 import io.github.velaliilunalii.magnetic_era.item.ModItems;
 import io.github.velaliilunalii.magnetic_era.particle.ModParticles;
@@ -22,7 +21,6 @@ public class MagneticEra implements ModInitializer {
 		ModItems.register(mod);
 		ModEntities.register();
 		ModSounds.register();
-		ModEnchantments.register();
 		ModParticles.register();
 		ModBlockEntities.register();
 	}

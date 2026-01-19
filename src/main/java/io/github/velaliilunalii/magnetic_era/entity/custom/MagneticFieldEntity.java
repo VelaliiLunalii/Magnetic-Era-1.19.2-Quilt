@@ -83,9 +83,10 @@ public class MagneticFieldEntity extends Entity {
 	public boolean isCorrectEntity(Entity entity){
 		//to override and add
 //		if (entity == this.owner || ((owner != null && owner.hasVehicle() && owner.getVehicle() == entity))) return false;
-		for (ItemStack itemStack : entity.getArmorItems()) {
-			if (itemStack.getItem().equals(ModItems.MAGNETIC_BOOTS)) return false;
-		}
+
+//		for (ItemStack itemStack : entity.getArmorItems()) {
+//			if (itemStack.getItem().equals(ModItems.MAGNETIC_BOOTS)) return false;
+//		}
 		if (entity instanceof ProjectileEntity || entity instanceof ItemEntity || entity instanceof AbstractMinecartEntity)
 			return true;
 		for (ItemStack itemStack : entity.getArmorItems()){

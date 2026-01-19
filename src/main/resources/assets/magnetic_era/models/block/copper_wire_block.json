@@ -2,9 +2,9 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "magnetic_era:block/copper_wire_block_end",
-		"1": "magnetic_era:block/copper_wire_block",
-		"particle": "magnetic_era:block/copper_wire_block_end"
+		"0": "magnetic_era:block/copper_wire_block/copper_wire_block_end",
+		"1": "magnetic_era:block/copper_wire_block/copper_wire_block",
+		"particle": "magnetic_era:block/copper_wire_block/copper_wire_block_end"
 	},
 	"elements": [
 		{

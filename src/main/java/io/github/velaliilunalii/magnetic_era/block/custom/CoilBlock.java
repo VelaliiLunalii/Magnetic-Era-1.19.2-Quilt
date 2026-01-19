@@ -7,7 +7,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShearsItem;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -29,13 +28,23 @@ public class CoilBlock extends DirectionalBlock{
 			ItemStack itemStack = player.getStackInHand(hand);
 			Direction direction = state.get(FACING);
 			Block block = state.getBlock();
-			if (itemStack.getItem() instanceof ShearsItem && ModBlocks.COIL_MAP.containsKey(block)){
-				if (!player.getAbilities().creativeMode) itemStack.damage(1, player, (playerEntityx) -> playerEntityx.sendToolBreakStatus(hand));
-				world.setBlockState(pos, ModBlocks.COIL_MAP.get(block).getDefaultState().with(FACING, direction), Block.NOTIFY_ALL);
-				player.giveItemStack(new ItemStack(ModItems.COPPER_WIRE, 1));
-				world.playSound((PlayerEntity)null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_GROWING_PLANT_CROP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			if (itemStack.getItem() instanceof ShearsItem){
+				if (ModBlocks.COPPER_COIL_MAP.containsKey(block)){
+					if (!player.getAbilities().creativeMode) itemStack.damage(1, player, (playerEntityx) -> playerEntityx.sendToolBreakStatus(hand));
+					world.setBlockState(pos, ModBlocks.COPPER_COIL_MAP.get(block).getDefaultState().with(FACING, direction), Block.NOTIFY_ALL);
+					player.giveItemStack(new ItemStack(ModItems.COPPER_WIRE, 1));
+					world.playSound((PlayerEntity)null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_GROWING_PLANT_CROP, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-				return ActionResult.SUCCESS;
+					return ActionResult.SUCCESS;
+				}
+				if (ModBlocks.PHASE_COIL_MAP.containsKey(block)){
+					if (!player.getAbilities().creativeMode) itemStack.damage(1, player, (playerEntityx) -> playerEntityx.sendToolBreakStatus(hand));
+					world.setBlockState(pos, ModBlocks.PHASE_COIL_MAP.get(block).getDefaultState().with(FACING, direction), Block.NOTIFY_ALL);
+					player.giveItemStack(new ItemStack(ModItems.PHASE_WIRE, 1));
+					world.playSound((PlayerEntity)null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_GROWING_PLANT_CROP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+					return ActionResult.SUCCESS;
+				}
 			}
 		}
 

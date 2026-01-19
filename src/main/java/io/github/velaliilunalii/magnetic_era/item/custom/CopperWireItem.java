@@ -14,7 +14,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.CollisionView;
 import net.minecraft.world.World;
 
 import static io.github.velaliilunalii.magnetic_era.block.custom.BiAxisBlock.MAIN_AXIS;
@@ -38,9 +37,9 @@ public class CopperWireItem extends Item {
 			BlockPos pos2 = pos.offset(surfaceDirection);
 			Block block = state.getBlock();
 			if (itemStack.getItem().equals(ModItems.COPPER_WIRE)) {
-				if (ModBlocks.CORE_MAP.containsKey(block)) {
+				if (ModBlocks.COPPER_CORE_MAP.containsKey(block)) {
 					if (!player.getAbilities().creativeMode) itemStack.split(1);
-					world.setBlockState(pos, ModBlocks.CORE_MAP.get(block).getDefaultState().with(FACING, state.get(FACING)), Block.NOTIFY_ALL);
+					world.setBlockState(pos, ModBlocks.COPPER_CORE_MAP.get(block).getDefaultState().with(FACING, state.get(FACING)), Block.NOTIFY_ALL);
 					world.playSound((PlayerEntity) null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_COPPER_PLACE, SoundCategory.PLAYERS, 1F, 1F);
 
 					return ActionResult.SUCCESS;

@@ -7,9 +7,6 @@ import net.minecraft.util.Identifier;
 
 public class ModModelPredicateProvider {
 	public static void register() {
-		ModelPredicateProviderRegistry.register(ModItems.MAGNETIC_FISHING_ROD, new Identifier(MagneticEra.MOD_ID, "cast"),
-			(itemStack, clientWorld, livingEntity, seed) -> {
-				return livingEntity instanceof PlayerEntity player && player.fishHook != null ? 1.0F : 0.0F;
-			});
+
 	}
 }

@@ -4,8 +4,6 @@
 	"package": "io.github.velaliilunalii.magnetic_era.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-    "FishingBobberEntityAccessorMixin",
-    "FishingBobberRendererMixin",
     "ItemStackMixin"
   ],
 	"client": [

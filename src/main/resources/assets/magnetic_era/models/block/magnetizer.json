@@ -2,9 +2,9 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "magnetic_era:block/magnetizer_ring",
-		"2": "magnetic_era:block/magnetizer_base",
-		"particle": "magnetic_era:block/magnetizer_base"
+		"1": "magnetic_era:block/magnetizer/magnetizer_ring",
+		"2": "magnetic_era:block/magnetizer/magnetizer_base",
+		"particle": "magnetic_era:block/magnetizer/magnetizer_base"
 	},
 	"elements": [
 		{

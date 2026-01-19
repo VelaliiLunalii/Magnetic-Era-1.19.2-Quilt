@@ -1,16 +1,28 @@
 package io.github.velaliilunalii.magnetic_era.block;
 
 import io.github.velaliilunalii.magnetic_era.MagneticEra;
+import io.github.velaliilunalii.magnetic_era.block.block_entity.CapacitorBlockEntity;
 import io.github.velaliilunalii.magnetic_era.block.block_entity.MagnetizerBlockEntity;
 import io.github.velaliilunalii.magnetic_era.block.block_entity.capacitor.*;
 import io.github.velaliilunalii.magnetic_era.block.block_entity.phase.InvertedPhaseBlockEntity;
 import io.github.velaliilunalii.magnetic_era.block.block_entity.phase.PhaseBlockEntity;
 import io.github.velaliilunalii.magnetic_era.block.block_entity.ResonatorBlockEntity;
+import io.github.velaliilunalii.magnetic_era.block.custom.CapacitorBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModBlockEntities {
+
+	public static final BlockEntityType<CapacitorBlockEntity> CAPACITOR_BLOCK_ENTITY =
+		Registry.register(
+			Registry.BLOCK_ENTITY_TYPE,
+			new Identifier(MagneticEra.MOD_ID, "capacitor"),
+			BlockEntityType.Builder.create(
+				CapacitorBlockEntity::new,
+				ModBlocks.CAPACITOR
+			).build(null)
+		);
 
 	public static final BlockEntityType<CopperCapacitorBlockEntity> COPPER_CAPACITOR_BLOCK_ENTITY =
 		Registry.register(

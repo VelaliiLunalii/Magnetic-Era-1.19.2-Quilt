@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "magnetic_era:block/inverted_phase_block"
+    "all": "magnetic_era:block/phase/inverted_phase_block"
   }
 }

@@ -1,6 +1,7 @@
 package io.github.velaliilunalii.magnetic_era.block.block_entity;
 
 import io.github.velaliilunalii.magnetic_era.block.ModBlockEntities;
+import io.github.velaliilunalii.magnetic_era.block.ModBlocks;
 import io.github.velaliilunalii.magnetic_era.entity.custom.MagneticFieldEntity;
 import io.github.velaliilunalii.magnetic_era.item.ModItems;
 import io.github.velaliilunalii.magnetic_era.particle.effect.MagneticBeamParticleEffect;
@@ -42,7 +43,8 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 
 	public boolean hasRecipe(ItemStack stack){
 		Item item = stack.getItem();
-		return item.equals(Items.IRON_INGOT) || !stack.isStackable();
+		return item.equals(Items.IRON_INGOT) || !stack.isStackable()
+			|| item.equals(ModBlocks.PHASE_BLOCK.asItem()) || item.equals(ModBlocks.INVERTED_PHASE_BLOCK.asItem());
 	}
 
 	public void getItemStack(PlayerEntity player){
@@ -184,6 +186,8 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 
 	public static ItemStack getMagnetizingOutput(ItemStack input){
 		if (input.getItem().equals(Items.IRON_INGOT)) return new ItemStack(ModItems.PHASE_INGOT, 1);
+		if (input.getItem().equals(ModBlocks.PHASE_BLOCK.asItem())) return new ItemStack(ModBlocks.INVERTED_PHASE_BLOCK, 1);
+		if (input.getItem().equals(ModBlocks.INVERTED_PHASE_BLOCK.asItem())) return new ItemStack(ModBlocks.PHASE_BLOCK, 1);
 		NbtCompound nbtCompound = input.getOrCreateNbt();
 		nbtCompound.putBoolean("Magnetized", !nbtCompound.getBoolean("Magnetized"));
 		return input;

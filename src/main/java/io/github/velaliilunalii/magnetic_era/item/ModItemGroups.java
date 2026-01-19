@@ -9,6 +9,6 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups {
 	public static final ItemGroup MAGNETIC_ERA_GROUP = FabricItemGroupBuilder.build(
 		new Identifier(MagneticEra.MOD_ID, "magnetic_era_group"),
-		() -> new ItemStack(ModItems.MAGNETITE)
+		() -> new ItemStack(ModItems.PHASE_INGOT)
 	);
 }

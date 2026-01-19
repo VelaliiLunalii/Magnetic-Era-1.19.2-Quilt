@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "main_axis=x,secondary_axis=y": {
+      "model": "magnetic_era:block/phase_wire_vertical",
+      "y": 90
+    },
+    "main_axis=x,secondary_axis=z": {
+      "model": "magnetic_era:block/phase_wire",
+      "y": 90
+    },
+    "main_axis=z,secondary_axis=x": {
+      "model": "magnetic_era:block/phase_wire"
+    },
+    "main_axis=z,secondary_axis=y": {
+      "model": "magnetic_era:block/phase_wire_vertical"
+    },
+    "main_axis=y,secondary_axis=x": {
+      "model": "magnetic_era:block/phase_wire",
+      "x": 270
+    },
+    "main_axis=y,secondary_axis=z": {
+      "model": "magnetic_era:block/phase_wire",
+      "x": 270,
+      "y": 90
+    }
+  }
+}
+

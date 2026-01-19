@@ -1,20 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "M": {
-      "item": "magnetic_era:magnetite"
-    },
-    "G": {
-      "tag": "minecraft:glass_blocks"
+    "#": {
+      "item": "magnetic_era:phase_ingot"
     }
   },
   "pattern": [
-    "GGG",
-    "GMG",
-    "GGG"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 8,
     "item": "magnetic_era:phase_block"
   }
 }
