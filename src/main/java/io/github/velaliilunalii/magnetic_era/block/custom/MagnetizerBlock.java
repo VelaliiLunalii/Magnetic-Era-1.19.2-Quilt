@@ -6,6 +6,8 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -14,6 +16,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -23,6 +26,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class MagnetizerBlock extends BlockWithEntity {
 	public static final DirectionProperty FACING = Properties.FACING;
@@ -71,7 +76,7 @@ public class MagnetizerBlock extends BlockWithEntity {
 			ItemStack itemStack = player.getStackInHand(hand);
 			if (!world.isClient) {
 				if (!magnetizerBlockEntity.isEmpty()) {
-					magnetizerBlockEntity.getItemStack(player);
+					magnetizerBlockEntity.getItemStack(hit.getSide());
 				}
 				if (magnetizerBlockEntity.addItem(player, player.getAbilities().creativeMode ? itemStack.copy() : itemStack)) {
 //				player.incrementStat(Stats.INTERACT_WITH_CAMPFIRE);
@@ -80,18 +85,6 @@ public class MagnetizerBlock extends BlockWithEntity {
 			}
 			return ActionResult.CONSUME;
 		}
-
-
-//			Optional<CampfireCookingRecipe> optional = magnetizerBlockEntity.getRecipeFor(itemStack);
-//			if (optional.isPresent()) {
-//				if (!world.isClient && magnetizerBlockEntity.addItem(player, player.getAbilities().creativeMode ? itemStack.copy() : itemStack, ((CampfireCookingRecipe)optional.get()).getCookTime())) {
-//					player.incrementStat(Stats.INTERACT_WITH_CAMPFIRE);
-//					return ActionResult.SUCCESS;
-//				}
-//
-//				return ActionResult.CONSUME;
-//			}
-//		}
 
 		return ActionResult.PASS;
 	}
@@ -129,5 +122,15 @@ public class MagnetizerBlock extends BlockWithEntity {
 	@Override
 	public BlockRenderType getRenderType(BlockState state) {
 		return BlockRenderType.MODEL;
+	}
+
+	@Override
+	public void appendTooltip(ItemStack itemStack, BlockView world, List<Text> tooltip, TooltipContext tooltipContext) {
+		if (Screen.hasShiftDown()) {
+			tooltip.add(Text.translatable("block.magnetic_era.magnetizer.tooltip.shift").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+		}else {
+			tooltip.add(Text.translatable("block.magnetic_era.magnetizer.tooltip").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+			tooltip.add(Text.translatable("tooltip.shift").formatted(Formatting.GRAY));
+		}
 	}
 }

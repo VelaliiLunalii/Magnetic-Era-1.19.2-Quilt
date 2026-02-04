@@ -10,7 +10,7 @@ import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class ModItems {
-	public static final Item PHASE_INGOT = new Item(
+	public static final Item PHASE_INGOT = new ToolTipItem(
 		new QuiltItemSettings().group(ModItemGroups.MAGNETIC_ERA_GROUP));
 	public static final Item COPPER_WIRE = new CopperWireItem(
 		new QuiltItemSettings().group(ModItemGroups.MAGNETIC_ERA_GROUP));

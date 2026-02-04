@@ -6,6 +6,7 @@ import io.github.velaliilunalii.magnetic_era.entity.ModEntities;
 import io.github.velaliilunalii.magnetic_era.item.ModItems;
 import io.github.velaliilunalii.magnetic_era.particle.ModParticles;
 import io.github.velaliilunalii.magnetic_era.sound.ModSounds;
+import io.github.velaliilunalii.magnetic_era.data.ModTrackedData;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.slf4j.Logger;
@@ -23,5 +24,6 @@ public class MagneticEra implements ModInitializer {
 		ModSounds.register();
 		ModParticles.register();
 		ModBlockEntities.register();
+		ModTrackedData.register();
 	}
 }

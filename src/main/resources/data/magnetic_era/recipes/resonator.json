@@ -1,14 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": {
+    "I": {
       "item": "magnetic_era:phase_ingot"
+    },
+    "B": {
+      "item": "magnetic_era:phase_block"
     }
   },
   "pattern": [
-    " # ",
-    "# #",
-    " # "
+    " I ",
+    "IBI",
+    " I "
   ],
   "result": {
     "item": "magnetic_era:resonator"

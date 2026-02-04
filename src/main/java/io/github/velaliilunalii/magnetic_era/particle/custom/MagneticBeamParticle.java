@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class MagneticBeamParticle extends SpriteBillboardParticle {
 	final SpriteProvider spriteProvider;
-	private boolean xDirection;
-	private boolean yDirection;
-	private boolean zDirection;
-	private boolean isClockwise;
+	private final boolean xDirection;
+	private final boolean yDirection;
+	private final boolean zDirection;
+	private final boolean isClockwise;
 
 	MagneticBeamParticle(ClientWorld world, double x, double y, double z,
 						 double velocityX, double velocityY, double velocityZ,

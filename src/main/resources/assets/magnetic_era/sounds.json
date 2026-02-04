@@ -2,5 +2,17 @@
   "magnetic_buzz": {
     "sounds": ["magnetic_era:magnetic_buzz"],
     "subtitle": "subtitle.magnetic_era.magnetic_buzz"
+  },
+  "mechanical_push": {
+    "sounds": ["magnetic_era:mechanical_push"],
+    "subtitle": "subtitle.magnetic_era.mechanical_push"
+  },
+  "capacitor_powering": {
+    "sounds": ["magnetic_era:capacitor_powering"],
+    "subtitle": "subtitle.magnetic_era.capacitor_powering"
+  },
+  "magnetic_chime": {
+    "sounds": ["magnetic_era:magnetic_chime"],
+    "subtitle": "subtitle.magnetic_era.magnetic_chime"
   }
 }

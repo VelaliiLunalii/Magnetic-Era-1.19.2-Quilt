@@ -7,8 +7,11 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.DoorHinge;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -17,10 +20,8 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Hand;
+import net.minecraft.text.Text;
+import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -29,6 +30,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ResonatorBlock extends BlockWithEntity {
 	public static final DirectionProperty FACING = Properties.FACING;
@@ -116,5 +119,15 @@ public class ResonatorBlock extends BlockWithEntity {
 	@Override
 	public BlockRenderType getRenderType(BlockState state) {
 		return BlockRenderType.MODEL;
+	}
+
+	@Override
+	public void appendTooltip(ItemStack itemStack, BlockView world, List<Text> tooltip, TooltipContext tooltipContext) {
+		if (Screen.hasShiftDown()) {
+			tooltip.add(Text.translatable("block.magnetic_era.resonator.tooltip.shift").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+		}else {
+			tooltip.add(Text.translatable("block.magnetic_era.resonator.tooltip").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+			tooltip.add(Text.translatable("tooltip.shift").formatted(Formatting.GRAY));
+		}
 	}
 }

@@ -1,31 +1,31 @@
 package io.github.velaliilunalii.magnetic_era.block.block_entity;
 
 import io.github.velaliilunalii.magnetic_era.block.ModBlockEntities;
-import io.github.velaliilunalii.magnetic_era.block.ModBlocks;
-import io.github.velaliilunalii.magnetic_era.block.custom.CapacitorBlock;
 import io.github.velaliilunalii.magnetic_era.block.custom.CoilBlock;
 import io.github.velaliilunalii.magnetic_era.block.custom.WireBlock;
 import io.github.velaliilunalii.magnetic_era.entity.custom.BlockMagneticFieldEntity;
-import io.github.velaliilunalii.magnetic_era.entity.custom.CalibratedBlockMagneticFieldEntity;
+import io.github.velaliilunalii.magnetic_era.entity.custom.BlockMagneticFieldEntity.FieldFeatures.TemperatureFeature;
+import io.github.velaliilunalii.magnetic_era.particle.ModParticles;
+import io.github.velaliilunalii.magnetic_era.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static io.github.velaliilunalii.magnetic_era.block.custom.CapacitorBlock.*;
-import static io.github.velaliilunalii.magnetic_era.entity.custom.BlockMagneticFieldEntity.FieldType.CALIBRATED_CAPACITOR;
-import static io.github.velaliilunalii.magnetic_era.entity.custom.BlockMagneticFieldEntity.FieldType.CAPACITOR;
 
 public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTicker<CapacitorBlockEntity> {
 	private int charge;
@@ -49,7 +49,7 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 			if (field != null) {
 				if (!state.get(ENABLED)) field.disableParticles();
 				world.spawnEntity(field);
-				checkCooldown = 100;
+				checkCooldown = 92;
 			} else {
 				checkCooldown = 20;
 			}
@@ -62,7 +62,6 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 		int level = state.get(LEVEL);
 		int levelMaxCharge = Math.round(maxCharge * ((float)level/8));
 
-		// Augmenter/diminuer la charge
 		if (receivingPower && charge < levelMaxCharge && level > 0) {
 			charge = Math.min(charge + 1, levelMaxCharge);
 			markDirty();
@@ -70,12 +69,13 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 			charge--;
 		}
 
-		// Calculer le niveau de charge (0-8)
 		int chargeLevel = Math.round((float) charge / 20);
 		boolean shouldBeLit = charge >= levelMaxCharge;
-		if (isLit != shouldBeLit || state.get(CHARGE) != chargeLevel) {
+		if (state.get(CHARGE) != chargeLevel) {
 			world.setBlockState(pos, state
 				.with(CHARGE, chargeLevel), Block.NOTIFY_ALL);
+			if (chargeLevel > 0) world.playSound((PlayerEntity)null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+				ModSounds.CAPACITOR_POWERING, SoundCategory.PLAYERS, 1.0F, (0.6f + (chargeLevel * 0.1f)));
 		}
 
 		if (!isLit && shouldBeLit && level > 0) world.setBlockState(pos, (BlockState)state.cycle(LIT), 2);
@@ -85,24 +85,25 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 	public static Block getBlock(World world, BlockPos pos){return world.getBlockState(pos).getBlock();}
 
 	public static BlockMagneticFieldEntity isCoilComplete(World world, BlockPos pos, Direction direction, int level){
-		BlockMagneticFieldEntity magneticFieldEntity;
 		Direction originalDirection1 = null;
 		Direction originalDirection2 = null;
 		BlockPos runningPos = pos.offset(direction);
 		BlockPos firstCornerPos = null;
 		int edgeCount = 0;
 		BlockState[] cornerList = new BlockState[4];
-		int weakCoilAmount = 0;
-		int strongCoilAmount = 0;
+		int[] fieldFeatures = {0, 0};
+		TemperatureFeature temperatureFeature = TemperatureFeature.TEMPERATE;
+		boolean calibrated = false;
 
 		int distance = 0;
-		while (distance < 32 && getBlock(world, runningPos) instanceof WireBlock){
+		while (distance < 32 && isWireBlock(getBlock(world, runningPos))){
+			if (getBlock(world, runningPos).equals(Blocks.AMETHYST_BLOCK)) calibrated = true;
+			else if (getBlock(world, runningPos).equals(Blocks.MAGMA_BLOCK)) temperatureFeature = TemperatureFeature.HOT;
+			else if (getBlock(world, runningPos).equals(Blocks.POWDER_SNOW)) temperatureFeature = TemperatureFeature.COLD;
 			runningPos = runningPos.offset(direction);
 			distance ++;
 		}
 		BlockPos startPos = runningPos;
-
-		System.out.println(runningPos);
 
 		if(getBlock(world, runningPos) instanceof CoilBlock){
 			Direction runningDirection = world.getBlockState(runningPos).get(FACING);
@@ -115,15 +116,12 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 					if (i == 4 && runningPos.equals(startPos)) break;
 					newEdgeCount++;
 
-					//TODO
-					if (coil.equals(ModBlocks.WEAK_COPPER_COIL) || coil.equals(ModBlocks.WEAK_PHASE_COIL)) weakCoilAmount ++;
-					if (coil.equals(ModBlocks.STRONG_COPPER_COIL) || coil.equals(ModBlocks.STRONG_PHASE_COIL)) strongCoilAmount ++;
+					CoilBlock.CoilFeatures coilFeatures = CoilBlock.CoilFeatures.getCoilFeatures(world, runningPos);
+					fieldFeatures[coilFeatures.pullsToCenter() ? 1 : 0] += coilFeatures.getPullStrength();
 
 					runningPos = runningPos.offset(runningDirection);
 					coil = world.getBlockState(runningPos).getBlock();
 				}
-
-				System.out.println("runningPos = ".concat(runningPos.toString()));
 
 				//first corner direction test
 				if (i == 0){
@@ -161,168 +159,47 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 		}
 
 		if(edgeCount > 0 && runningPos.equals(startPos)) {
-			Vec3d fieldPos = new Vec3d(firstCornerPos.getX(), firstCornerPos.getY(), firstCornerPos.getZ())
-				.add(0.5, 0.25, 0.5)
-				.relative(originalDirection1.getOpposite(), (double) (edgeCount + 1) /2)
-				.relative(originalDirection2, (double) (edgeCount + 1) /2);
-
-			Box box = new Box(new BlockPos(fieldPos));
-			List<Entity> entityList = world.getEntitiesByClass(
-				Entity.class,
-				box,
-				entity -> entity instanceof BlockMagneticFieldEntity
-			);
-			if (!entityList.isEmpty()) return null;
-
-			Direction orthogonal = getOrthogonal(originalDirection1.getOpposite(), originalDirection2);
-
-			int lengthIncrease = 0;
-			for (BlockState blockState : cornerList){
-				Block block = blockState.getBlock();
-				if (isExtenderCornerBlock(block)) lengthIncrease += 2;
-			}
-			int directionLength = 1 + lengthIncrease;
-
-			int coilAmount = (edgeCount * 4);
-
-			float weakCoilRatio = (float) weakCoilAmount /coilAmount;
-			float direction_multiplicator = ((1 - weakCoilRatio) * 0.4F) + 0.1F;
-
-			float strongCoilRatio = (float) strongCoilAmount /coilAmount;
-			float centerStrength = strongCoilRatio * 0.2F;	//TODO
-
-			magneticFieldEntity = new BlockMagneticFieldEntity(world, fieldPos, direction_multiplicator, orthogonal, directionLength, edgeCount, centerStrength, coilAmount, CAPACITOR.getTypeId());
-			return magneticFieldEntity;
+			return getMagneticField(world, firstCornerPos, originalDirection1, originalDirection2, edgeCount, fieldFeatures, cornerList, temperatureFeature, calibrated);
 		}
-
-//		if (endDirection != null) {
-//			endDirection = endDirection.getOpposite();
-//			Direction runningOffset = direction;
-//			for (int i = 0; i < 4; ++i) {
-//				int newEdgeCount = 0;
-//				Block coil = world.getBlockState(runningPos).getBlock();
-//				while (coil instanceof CoilBlock){
-//					newEdgeCount++;
-//					if (coil.equals(ModBlocks.WEAK_COPPER_COIL)) weakCoilList.add(coil);
-//					if (coil.equals(ModBlocks.STRONG_COPPER_COIL)) strongCoilList.add(coil);
-//					runningPos = runningPos.offset(runningOffset);
-//					coil = world.getBlockState(runningPos).getBlock();
-//				}
-//
-//				if (i == 0){
-//					edgeCount = newEdgeCount;
-//				}else{
-//					if (newEdgeCount != edgeCount) return null;
-//				}
-//				if (i != 3){
-//					BlockState blockState = world.getBlockState(runningPos);
-//					if(blockState.getBlock() instanceof CapacitorBlock && blockState.get(LIT)) return null;
-//					cornerList[i] = blockState;
-//				}
-//
-//				if (i == 0) runningOffset = endDirection.getOpposite();
-//				if (i == 1) runningOffset = direction.getOpposite();
-//				if (i == 2) runningOffset = endDirection;
-//				if (i != 3) runningPos = runningPos.offset(runningOffset);
-//			}
-//		}
-
-//		if(runningPos.equals(pos)) {
-//			Vec3d fieldPos = new Vec3d(pos.getX(), pos.getY(), pos.getZ())
-//				.add(0.5, 0.25, 0.5)
-//				.relative(direction, (double) (edgeCount + 1) /2)
-//				.relative(endDirection.getOpposite(), (double) (edgeCount + 1) /2);
-//			Direction orthogonal = getOrthogonal(direction, endDirection);
-//
-//			int lengthIncrease = 0;
-//			for (BlockState blockState : cornerList){
-//				Block block = blockState.getBlock();
-//				if (isExtenderCornerBlock(block)) lengthIncrease += 2;
-//			}
-//			int directionLength = 1 + lengthIncrease;
-//
-//			int coilAmount = (edgeCount * 4);
-//
-//			float weakCoilRatio = (float) weakCoilList.size() /coilAmount;
-//			float direction_multiplicator = ((1 - weakCoilRatio) * 0.4F) + 0.1F;
-//
-//			float strongCoilRatio = (float) strongCoilList.size() /coilAmount;
-//			float centerStrength = strongCoilRatio * 0.2F;
-//
-//			magneticFieldEntity = new BlockMagneticFieldEntity(world, fieldPos, direction_multiplicator, orthogonal, directionLength, edgeCount, centerStrength, coilAmount, CAPACITOR.getTypeId());
-//			return magneticFieldEntity;
-//		}
-
 		return null;
 	}
 
-	public static BlockMagneticFieldEntity isCalibratedCoilComplete(World world, BlockPos startingPos, Direction direction){
-		BlockMagneticFieldEntity magneticFieldEntity;
-		BlockPos runningPos = startingPos.offset(direction);
-		Direction endDirection = checkPerpendicular(world, startingPos, direction);
-		int edgeCount = 0;
-		BlockState[] cornerList = new BlockState[3];
-		ArrayList<Block> weakCoilList = new ArrayList<>();
-		ArrayList<Block> strongCoilList = new ArrayList<>();
-		if (endDirection != null) {
-			endDirection = endDirection.getOpposite();
-			Direction runningOffset = direction;
-			for (int i = 0; i < 4; ++i) {
-				int newEdgeCount = 0;
-				Block coil = world.getBlockState(runningPos).getBlock();
-				while (coil instanceof CoilBlock){
-					newEdgeCount++;
-					if (coil.equals(ModBlocks.WEAK_COPPER_COIL)) weakCoilList.add(coil);
-					if (coil.equals(ModBlocks.STRONG_COPPER_COIL)) strongCoilList.add(coil);
-					runningPos = runningPos.offset(runningOffset);
-					coil = world.getBlockState(runningPos).getBlock();
-				}
+	public static BlockMagneticFieldEntity getMagneticField(World world, BlockPos firstCornerPos, Direction originalDirection1, Direction originalDirection2, int edgeCount, int[] fieldFeatures, BlockState[] cornerList, TemperatureFeature temperatureFeature, boolean calibrated){
+		Vec3d fieldPos = new Vec3d(firstCornerPos.getX(), firstCornerPos.getY(), firstCornerPos.getZ())
+			.add(0.5, 0.25, 0.5)
+			.relative(originalDirection1.getOpposite(), (double) (edgeCount + 1) /2)
+			.relative(originalDirection2, (double) (edgeCount + 1) /2);
 
-				if (i == 0){
-					edgeCount = newEdgeCount;
-				}else{
-					if (newEdgeCount != edgeCount) return null;
-				}
-				if (i != 3){
-					BlockState blockState = world.getBlockState(runningPos);
-					if(blockState.getBlock() instanceof CapacitorBlock && blockState.get(LIT)) return null;
-					cornerList[i] = blockState;
-				}
+		if (hasField(world, fieldPos)) return null;
 
-				if (i == 0) runningOffset = endDirection.getOpposite();
-				if (i == 1) runningOffset = direction.getOpposite();
-				if (i == 2) runningOffset = endDirection;
-				if (i != 3) runningPos = runningPos.offset(runningOffset);
-			}
+		int lengthIncrease = 0;
+		for (BlockState blockState : cornerList){
+			Block block = blockState.getBlock();
+			if (isExtenderCornerBlock(block)) lengthIncrease += 2;
 		}
-		if(runningPos.equals(startingPos)) {
-			Vec3d fieldPos = new Vec3d(startingPos.getX(), startingPos.getY(), startingPos.getZ())
-				.add(0.5, 0.25, 0.5)
-				.relative(direction, (double) (edgeCount + 1) /2)
-				.relative(endDirection.getOpposite(), (double) (edgeCount + 1) /2);
-			Direction orthogonal = getOrthogonal(direction, endDirection);
 
-			int lengthIncrease = 0;
-			for (BlockState blockState : cornerList){
-				Block block = blockState.getBlock();
-				if (isExtenderCornerBlock(block)) lengthIncrease += 2;
-			}
-			int directionLength = 1 + lengthIncrease;
+		int coilAmount = (edgeCount * 4);
 
-			int coilAmount = (edgeCount * 4);
+		return new BlockMagneticFieldEntity(world, fieldPos,
+			(float) fieldFeatures[0] / (10 * coilAmount),
+			getOrthogonal(originalDirection1.getOpposite(), originalDirection2),
+			1 + lengthIncrease,
+			edgeCount,
+			(float) fieldFeatures[1] / (20 * coilAmount),
+			coilAmount,
+			false,
+			temperatureFeature,
+			calibrated);
+	}
 
-			float weakCoilRatio = (float) weakCoilList.size() /coilAmount;
-			float direction_multiplicator = ((1 - weakCoilRatio) * 0.4F) + 0.1F;
-
-			float strongCoilRatio = (float) strongCoilList.size() /coilAmount;
-			float centerStrength = strongCoilRatio * 0.2F;
-
-			magneticFieldEntity = new CalibratedBlockMagneticFieldEntity(world, fieldPos, direction_multiplicator,
-				orthogonal, directionLength, edgeCount, centerStrength, coilAmount, CALIBRATED_CAPACITOR.getTypeId());
-			return magneticFieldEntity;
-		}
-		return null;
-
+	public static boolean hasField(World world, Vec3d fieldPos){
+		Box box = new Box(new BlockPos(fieldPos));
+		List<Entity> entityList = world.getEntitiesByClass(
+			Entity.class,
+			box,
+			entity -> entity instanceof BlockMagneticFieldEntity blockMagneticFieldEntity && blockMagneticFieldEntity.getAgeProgress() < 0.9
+		);
+		return !entityList.isEmpty();
 	}
 
 	public static boolean isExtenderCornerBlock(Block block){
@@ -331,6 +208,11 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 			block.equals(Blocks.WEATHERED_COPPER) || block.equals(Blocks.WAXED_WEATHERED_COPPER) ||
 			block.equals(Blocks.OXIDIZED_COPPER) || block.equals(Blocks.WAXED_OXIDIZED_COPPER) ||
 			block.equals(Blocks.IRON_BLOCK) || block.equals(Blocks.NETHERITE_BLOCK);
+	}
+
+	public static boolean isWireBlock(Block block){
+		return block instanceof WireBlock || block.equals(Blocks.AMETHYST_BLOCK) || block.equals(Blocks.MAGMA_BLOCK)
+			|| block.equals(Blocks.POWDER_SNOW);
 	}
 
 	//SE, WS, NW, EN : D	XZ
@@ -360,16 +242,6 @@ public class CapacitorBlockEntity extends BlockEntity implements BlockEntityTick
 				(direction1.equals(Direction.DOWN) && direction2.equals(Direction.NORTH))) ? Direction.WEST : Direction.EAST;
 		}
 		return orthogonal;
-	}
-
-	public static Direction checkPerpendicular(World world, BlockPos pos, Direction originalDirection){
-		for (Direction direction : Direction.values()){
-			if (direction != originalDirection && direction != originalDirection.getOpposite()){
-				Block block = world.getBlockState(pos.offset(direction)).getBlock();
-				if(block == ModBlocks.COPPER_COIL || block == ModBlocks.WEAK_COPPER_COIL || block == ModBlocks.STRONG_COPPER_COIL) return direction;
-			}
-		}
-		return null;
 	}
 
 	@Override

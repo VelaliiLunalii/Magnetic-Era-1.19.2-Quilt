@@ -4,7 +4,10 @@ import io.github.velaliilunalii.magnetic_era.block.ModBlockEntities;
 import io.github.velaliilunalii.magnetic_era.block.ModBlocks;
 import io.github.velaliilunalii.magnetic_era.entity.custom.MagneticFieldEntity;
 import io.github.velaliilunalii.magnetic_era.item.ModItems;
+import io.github.velaliilunalii.magnetic_era.particle.ModParticles;
 import io.github.velaliilunalii.magnetic_era.particle.effect.MagneticBeamParticleEffect;
+import io.github.velaliilunalii.magnetic_era.sound.ModSounds;
+import io.github.velaliilunalii.magnetic_era.util.ItemStackUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -20,6 +23,7 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.component.NbtComponent;
 import net.minecraft.util.Clearable;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.*;
@@ -29,6 +33,7 @@ import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Random;
 
 import static io.github.velaliilunalii.magnetic_era.block.custom.MagnetizerBlock.FACING;
 import static io.github.velaliilunalii.magnetic_era.block.custom.MagnetizerBlock.POWERED;
@@ -47,12 +52,14 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 			|| item.equals(ModBlocks.PHASE_BLOCK.asItem()) || item.equals(ModBlocks.INVERTED_PHASE_BLOCK.asItem());
 	}
 
-	public void getItemStack(PlayerEntity player){
-		for(int i = 0; i < this.itemBeingMagnetized.size(); ++i) {
-			player.giveItemStack(this.itemBeingMagnetized.get(i));
-			this.itemBeingMagnetized.set(i, ItemStack.EMPTY);
+	public void getItemStack(Direction direction){
+		if (world != null) {
+			for (int i = 0; i < this.itemBeingMagnetized.size(); ++i) {
+				ItemStackUtil.popItemStack(world, pos, direction, this.itemBeingMagnetized.get(i));
+				this.itemBeingMagnetized.set(i, ItemStack.EMPTY);
+			}
+			this.updateListeners();
 		}
-		this.updateListeners();
 	}
 
 	public int[] getAvailableSlots(Direction side) {
@@ -82,7 +89,9 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 	}
 
 	public ItemStack getStack(int slot) {
-		return (ItemStack)this.itemBeingMagnetized.get(slot);
+		ItemStack result = this.itemBeingMagnetized.get(slot);
+		result.getOrCreateNbt();
+		return result;
 	}
 
 	public ItemStack removeStack(int slot, int amount) {
@@ -90,6 +99,7 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 		if (!result.isEmpty()) {
 			this.updateListeners();
 		}
+		result.getOrCreateNbt();
 		return result;
 	}
 
@@ -98,6 +108,7 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 		if (!result.isEmpty()) {
 			this.updateListeners();
 		}
+		result.getOrCreateNbt();
 		return result;
 	}
 
@@ -116,7 +127,7 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 			this.finishedMagnetizing = false;
 			this.markDirty();
 		}
-
+		updateListeners();
 	}
 
 	@Override
@@ -151,9 +162,13 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 			);
 			boolean oppositeFieldsAffected = containsOppositeFields(entityList);
 			if ((!oppositeFieldsAffected && powered) || (oppositeFieldsAffected && !powered)){
-				//TODO playsound
 				world.setBlockState(pos, (BlockState)state.cycle(POWERED), 2); world.updateNeighborsAlways(pos, state.getBlock());
-				}
+				Random random = new Random();
+				if (powered) world.playSound((PlayerEntity)null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+					ModSounds.CAPACITOR_POWERING, SoundCategory.PLAYERS, 1.0F, 0.6f + (random.nextFloat() * 0.2f));
+				else world.playSound((PlayerEntity)null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+					ModSounds.CAPACITOR_POWERING, SoundCategory.PLAYERS, 1.0F, 1.0f + (random.nextFloat() * 0.2f));
+			}
 		}
 
 		if(powered){
@@ -171,7 +186,19 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 							magnetizer.itemBeingMagnetized.set(i, output);
 							world.updateListeners(pos, state, state, 3);
 							world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.create(state));
-							world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_AMETHYST_BLOCK_HIT, SoundCategory.NEUTRAL, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
+							world.playSound((PlayerEntity)null, pos, ModSounds.MAGNETIC_CHIME, SoundCategory.NEUTRAL, 1.0F, 0.8F + (world.getRandom().nextFloat() * 0.4F));
+							if (world instanceof ServerWorld serverWorld) {
+								Direction.Axis axis = state.get(FACING).getAxis();
+								serverWorld.spawnParticles(
+									ModParticles.MAGNETIZER_PARTICLE,
+									pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+									0,
+									axis.equals(Direction.Axis.X) ? 1 : 0,
+									axis.equals(Direction.Axis.Y) ? 1 : 0,
+									axis.equals(Direction.Axis.Z) ? 1 : 0,
+									1
+								);
+							}
 						}
 						magnetizer.finishedMagnetizing = true;
 					}
@@ -185,12 +212,13 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 	}
 
 	public static ItemStack getMagnetizingOutput(ItemStack input){
-		if (input.getItem().equals(Items.IRON_INGOT)) return new ItemStack(ModItems.PHASE_INGOT, 1);
-		if (input.getItem().equals(ModBlocks.PHASE_BLOCK.asItem())) return new ItemStack(ModBlocks.INVERTED_PHASE_BLOCK, 1);
-		if (input.getItem().equals(ModBlocks.INVERTED_PHASE_BLOCK.asItem())) return new ItemStack(ModBlocks.PHASE_BLOCK, 1);
-		NbtCompound nbtCompound = input.getOrCreateNbt();
-		nbtCompound.putBoolean("Magnetized", !nbtCompound.getBoolean("Magnetized"));
-		return input;
+		ItemStack output = input;
+		NbtCompound nbtCompound = output.getOrCreateNbt();
+		if (input.getItem().equals(Items.IRON_INGOT)) output = new ItemStack(ModItems.PHASE_INGOT, 1);
+		else if (input.getItem().equals(ModBlocks.PHASE_BLOCK.asItem())) output = new ItemStack(ModBlocks.INVERTED_PHASE_BLOCK, 1);
+		else if (input.getItem().equals(ModBlocks.INVERTED_PHASE_BLOCK.asItem())) output = new ItemStack(ModBlocks.PHASE_BLOCK, 1);
+		else if (input.getItem().getMaxCount() == 1) nbtCompound.putBoolean("Magnetized", !nbtCompound.getBoolean("Magnetized"));
+		return output;
 	}
 
 	public static void clientTick(World world, BlockPos pos, BlockState state, MagnetizerBlockEntity magnetizer) {
@@ -228,9 +256,17 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 				1
 			);
 		}
+		if (!world.isClient && state.get(POWERED) && magnetizer.magnetizingTime > 97 && !magnetizer.isEmpty()){
+			Random random = new Random();
+			world.playSound((PlayerEntity) null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ModSounds.MAGNETIC_BUZZ, SoundCategory.PLAYERS, 1.0f, 0.9f + (random.nextFloat() * 0.2f));
+
+		}
 	}
 
 	public DefaultedList<ItemStack> getItemsBeingMagnetized() {
+		for(ItemStack itemStack : itemBeingMagnetized) {
+			itemStack.getOrCreateNbt();
+		}
 		return this.itemBeingMagnetized;
 	}
 
@@ -278,12 +314,6 @@ public class MagnetizerBlockEntity extends BlockEntity implements  BlockEntityTi
 		this.markDirty();
 		if (this.world != null) {
 			this.world.updateListeners(this.getPos(), this.getCachedState(), this.getCachedState(), 3);
-		}
-	}
-
-	public void spawnItemsBeingCooked() {
-		if (this.world != null) {
-			this.updateListeners();
 		}
 	}
 

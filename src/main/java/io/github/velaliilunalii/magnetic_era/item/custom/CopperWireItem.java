@@ -4,21 +4,28 @@ import io.github.velaliilunalii.magnetic_era.block.ModBlocks;
 import io.github.velaliilunalii.magnetic_era.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-import static io.github.velaliilunalii.magnetic_era.block.custom.BiAxisBlock.MAIN_AXIS;
-import static io.github.velaliilunalii.magnetic_era.block.custom.BiAxisBlock.SECONDARY_AXIS;
+import java.util.List;
+
 import static io.github.velaliilunalii.magnetic_era.block.custom.DirectionalBlock.FACING;
+import static io.github.velaliilunalii.magnetic_era.block.custom.WireBlock.MAIN_AXIS;
+import static io.github.velaliilunalii.magnetic_era.block.custom.WireBlock.SECONDARY_AXIS;
 
 public class CopperWireItem extends Item {
 	public CopperWireItem(Settings settings) {
@@ -64,5 +71,16 @@ public class CopperWireItem extends Item {
 			}
 		}
 		return super.useOnBlock(context);
+	}
+
+	@Override
+	public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
+		if (Screen.hasShiftDown()) {
+			tooltip.add(Text.translatable("item.magnetic_era.wire.tooltip.shift_1").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+			tooltip.add(Text.translatable("item.magnetic_era.wire.tooltip.shift_2").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+		}else {
+			tooltip.add(Text.translatable("item.magnetic_era.copper_wire.tooltip").styled(style -> style.withItalic(true)).formatted(Formatting.GRAY));
+			tooltip.add(Text.translatable("tooltip.shift").formatted(Formatting.GRAY));
+		}
 	}
 }

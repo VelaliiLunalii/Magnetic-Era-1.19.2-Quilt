@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "B": {
+      "item": "minecraft:copper_block"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "W": {
+      "item": "magnetic_era:copper_wire"
+    }
+  },
+  "pattern": [
+    "II ",
+    "BRW",
+    "II "
+  ],
+  "result": {
+    "item": "magnetic_era:capacitor"
+  }
+}

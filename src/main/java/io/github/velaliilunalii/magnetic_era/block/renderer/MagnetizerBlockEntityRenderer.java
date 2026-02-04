@@ -25,7 +25,6 @@ public class MagnetizerBlockEntityRenderer  implements BlockEntityRenderer<Magne
 	}
 
 	public void render(MagnetizerBlockEntity magnetizerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j) {
-		Direction direction = magnetizerBlockEntity.getCachedState().get(MagnetizerBlock.FACING);
 		DefaultedList<ItemStack> defaultedList = magnetizerBlockEntity.getItemsBeingMagnetized();
 		int k = (int)magnetizerBlockEntity.getPos().asLong();
 

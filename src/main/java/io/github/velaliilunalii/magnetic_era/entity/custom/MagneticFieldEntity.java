@@ -1,7 +1,7 @@
 package io.github.velaliilunalii.magnetic_era.entity.custom;
 
-import io.github.velaliilunalii.magnetic_era.item.ModItems;
 import net.minecraft.entity.*;
+import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import net.minecraft.item.*;
@@ -40,10 +40,7 @@ public class MagneticFieldEntity extends Entity {
 
 		List<Entity> entityList = getEntityList();
 		for (Entity entity : entityList) {
-			float appliedStrength = strength;
-			if (entity instanceof ProjectileEntity || entity instanceof AbstractMinecartEntity) appliedStrength *= 2;
-			double speed = entity.getVelocity().length();
-			if (speed < maxVelocity) applyVelocity(entity, appliedStrength);
+			applyEffects(entity);
 
 			//TODO Cross mod compatibility
 //			if (entity instanceof CopperCoinProjectileEntity coin) {
@@ -77,17 +74,20 @@ public class MagneticFieldEntity extends Entity {
 		return this.maxAge;
 	}
 
-	public void applyVelocity(Entity entity, float appliedStrength){
-	}
+	public int getAge(){return this.age;}
+
+	public double getAgeProgress(){return (double) age /maxAge;}
+
+	public void applyEffects(Entity entity){}
 
 	public boolean isCorrectEntity(Entity entity){
-		//to override and add
+		//to override and add in an item magnetic field
 //		if (entity == this.owner || ((owner != null && owner.hasVehicle() && owner.getVehicle() == entity))) return false;
 
 //		for (ItemStack itemStack : entity.getArmorItems()) {
 //			if (itemStack.getItem().equals(ModItems.MAGNETIC_BOOTS)) return false;
 //		}
-		if (entity instanceof ProjectileEntity || entity instanceof ItemEntity || entity instanceof AbstractMinecartEntity)
+		if (entity instanceof ProjectileEntity || entity instanceof ItemEntity || entity instanceof AbstractMinecartEntity || entity instanceof IronGolemEntity)
 			return true;
 		for (ItemStack itemStack : entity.getArmorItems()){
 			if (itemStack != null && itemStack.getItem() instanceof ArmorItem armorItem &&

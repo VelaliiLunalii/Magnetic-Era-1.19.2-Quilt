@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "magnetic_era:capacitor",
+    "magnetic_era:copper_coil",
+    "magnetic_era:weak_copper_coil",
+    "magnetic_era:strong_copper_coil",
+    "magnetic_era:phase_coil",
+    "magnetic_era:weak_phase_coil",
+    "magnetic_era:strong_phase_coil",
+    "magnetic_era:magnetic_core",
+    "magnetic_era:weak_magnetic_core",
+    "magnetic_era:strong_magnetic_core",
+    "magnetic_era:phase_block",
+    "magnetic_era:inverted_phase_block",
+    "magnetic_era:resonator",
+    "magnetic_era:magnetizer",
+    "magnetic_era:copper_wire_block",
+    "magnetic_era:phase_wire_block"
+  ]
+}
